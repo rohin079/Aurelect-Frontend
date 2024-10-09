@@ -5,12 +5,20 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronRight, Users, Target, Award, ArrowRight } from 'lucide-react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ArrowRight, Users, Target, Award, ChevronRight, Globe, Briefcase, GraduationCap } from 'lucide-react'
 
-interface AboutCardProps {
+interface TeamMemberProps {
+  name: string;
+  position: string;
+  bio: string;
+  image: string;
+}
+
+interface MilestoneProps {
+  year: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
 }
 
 export default function About() {
@@ -21,26 +29,26 @@ export default function About() {
   }, [])
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <header className="bg-white shadow-md">
+    <div className="flex flex-col min-h-screen bg-gray-50">
+      <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="flex items-center">
             <img src="/placeholder.svg?height=40&width=40" alt="Astris Global Consulting Logo" className="h-12 w-auto" />
-            <h1 className="ml-3 text-2xl font-bold text-gray-900">Astris Global Consulting</h1>
+            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Astris Global Consulting</h1>
           </div>
           <nav>
             <ul className="flex space-x-8">
-              <li><Link href="/" className="text-gray-700 hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/services" className="text-gray-700 hover:text-primary transition-colors">Services</Link></li>
-              <li><Link href="/about" className="text-gray-700 hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-gray-700 hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</Link></li>
+              <li><Link href="/services" className="text-gray-600 hover:text-gray-900 transition-colors">Services</Link></li>
+              <li><Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">About</Link></li>
+              <li><Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">Contact</Link></li>
             </ul>
           </nav>
         </div>
       </header>
 
       <main className="flex-grow">
-        <section className="bg-gradient-to-r from-blue-600 to-indigo-700 py-32 text-white">
+        <section className="bg-gray-900 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -48,94 +56,202 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-5xl font-extrabold sm:text-6xl sm:tracking-tight lg:text-7xl mb-6">
+              <h1 className="text-4xl font-semibold sm:text-5xl sm:tracking-tight lg:text-6xl mb-6">
                 About Astris Global Consulting
               </h1>
-              <p className="mt-6 max-w-2xl mx-auto text-xl sm:text-2xl">
+              <p className="mt-6 max-w-2xl mx-auto text-xl sm:text-2xl text-gray-300">
                 Empowering businesses through strategic financial management and innovative solutions.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+              <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Core Values</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <AboutCard
-                  title="Our Team"
-                  description="Our team of expert financial professionals brings decades of combined experience across various industries."
-                  icon={<Users className="h-10 w-10 text-primary" />}
-                />
-                <AboutCard
-                  title="Our Mission"
-                  description="To provide unparalleled financial guidance and solutions that drive business growth and success for our clients."
-                  icon={<Target className="h-10 w-10 text-primary" />}
-                />
-                <AboutCard
-                  title="Our Values"
-                  description="Integrity, excellence, innovation, and client-centricity are at the core of everything we do."
-                  icon={<Award className="h-10 w-10 text-primary" />}
-                />
+                <Card className="transition-all duration-300 hover:shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-2xl">
+                      <Users className="h-8 w-8 text-gray-700 mr-4" />
+                      Our Team
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">
+                      Our team of expert financial professionals brings decades of combined experience across various industries, ensuring top-tier advice and solutions for our clients.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+                <Card className="transition-all duration-300 hover:shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-2xl">
+                      <Target className="h-8 w-8 text-gray-700 mr-4" />
+                      Our Mission
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">
+                      To provide unparalleled financial guidance and solutions that drive business growth and success for our clients, empowering them to achieve their strategic goals.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+                <Card className="transition-all duration-300 hover:shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-2xl">
+                      <Award className="h-8 w-8 text-gray-700 mr-4" />
+                      Our Values
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">
+                      Integrity, excellence, innovation, and client-centricity are at the core of everything we do. We are committed to delivering the highest quality services with transparency and ethical practices.
+                    </CardDescription>
+                  </CardContent>
+                </Card>
               </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="bg-gray-50 py-24">
+        <section className="py-20 bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h2 className="text-4xl font-extrabold text-gray-900 mb-8 text-center">Our Approach</h2>
-              <p className="text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-                At Astris Global Consulting, we believe in a holistic approach to financial management. We combine strategic CFO expertise with efficient outsourcing solutions to provide comprehensive financial services tailored to your business needs.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Strategic Insight</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-lg">
-                      Our CFO services go beyond numbers. We provide strategic insights that help you make informed decisions and drive your business forward.
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Operational Excellence</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-lg">
-                      Our outsourcing solutions ensure that your day-to-day financial operations run smoothly, allowing you to focus on growing your business.
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </div>
+              <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Approach</h2>
+              <Tabs defaultValue="holistic" className="w-full">
+                <TabsList className="grid w-full grid-cols-1 md:grid-cols-3">
+                  <TabsTrigger value="holistic">Holistic Perspective</TabsTrigger>
+                  <TabsTrigger value="tailored">Tailored Solutions</TabsTrigger>
+                  <TabsTrigger value="innovative">Innovative Thinking</TabsTrigger>
+                </TabsList>
+                <TabsContent value="holistic">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Holistic Perspective</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p>At Astris Global Consulting, we believe in taking a comprehensive view of your business. We don't just look at the numbers; we consider your industry, market position, growth potential, and long-term objectives to provide truly impactful financial strategies.</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                <TabsContent value="tailored">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Tailored Solutions</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p>We understand that every business is unique. That's why we develop customized financial solutions that address your specific challenges and capitalize on your unique opportunities. Our approach ensures that you receive strategies and advice that are perfectly aligned with your business goals.</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                <TabsContent value="innovative">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Innovative Thinking</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p>In today's rapidly changing business environment, innovation is key. We constantly stay ahead of the curve, leveraging the latest financial technologies and methodologies to provide you with cutting-edge solutions that give you a competitive edge in your industry.</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="bg-primary text-white rounded-3xl p-12 text-center"
             >
-              <h2 className="text-4xl font-extrabold mb-6">Ready to Transform Your Finances?</h2>
-              <p className="text-xl mb-10">
+              <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Leadership Team</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <TeamMember
+                  name="John Doe"
+                  position="Founder & CEO"
+                  bio="With over 25 years of experience in financial consulting, John has led Astris Global Consulting to become a leader in the industry."
+                  image="/placeholder.svg?height=300&width=300"
+                />
+                <TeamMember
+                  name="Jane Smith"
+                  position="Chief Financial Officer"
+                  bio="Jane brings 20 years of expertise in corporate finance and has been instrumental in developing our innovative financial strategies."
+                  image="/placeholder.svg?height=300&width=300"
+                />
+                <TeamMember
+                  name="Michael Johnson"
+                  position="Head of Client Relations"
+                  bio="With a strong background in business development, Michael ensures our clients receive unparalleled service and support."
+                  image="/placeholder.svg?height=300&width=300"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Journey</h2>
+              <div className="space-y-8">
+                <Milestone
+                  year="2005"
+                  title="Foundation"
+                  description="Astris Global Consulting was founded with a vision to provide innovative financial solutions to businesses worldwide."
+                />
+                <Milestone
+                  year="2010"
+                  title="Expansion"
+                  description="We expanded our services to include comprehensive CFO solutions, meeting the growing demand for strategic financial leadership."
+                />
+                <Milestone
+                  year="2015"
+                  title="Global Reach"
+                  description="Astris Global Consulting established offices in major financial hubs, extending our services to clients across the globe."
+                />
+                <Milestone
+                  year="2020"
+                  title="Digital Transformation"
+                  description="We embraced cutting-edge financial technologies, enhancing our ability to provide real-time insights and data-driven strategies."
+                />
+                <Milestone
+                  year="Today"
+                  title="Industry Leader"
+                  description="Astris Global Consulting continues to set the standard for financial consulting, serving a diverse portfolio of clients across various industries."
+                />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gray-900 text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="text-center"
+            >
+              <h2 className="text-3xl font-semibold mb-6">Ready to Transform Your Financial Strategy?</h2>
+              <p className="text-xl mb-10 text-gray-300">
                 Let's discuss how our expertise can benefit your business and drive growth.
               </p>
-              <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
+              <Button asChild size="lg" className="text-lg px-8 py-6 bg-white text-gray-900 hover:bg-gray-100">
                 <Link href="/contact">
                   Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -173,23 +289,35 @@ export default function About() {
             <p className="text-gray-400">&copy; 2023 Astris Global Consulting. All rights reserved.</p>
           </div>
         </div>
+      
       </footer>
     </div>
   )
 }
 
-function AboutCard({ title, description, icon }: AboutCardProps) {
+function TeamMember({ name, position, bio, image }: TeamMemberProps) {
   return (
     <Card className="transition-all duration-300 hover:shadow-lg">
-      <CardHeader>
-        <CardTitle className="flex items-center text-2xl">
-          {icon}
-          <span className="ml-4">{title}</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-lg">{description}</CardDescription>
+      <CardContent className="pt-6">
+        <img src={image} alt={name} className="w-32 h-32 rounded-full mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-center mb-2">{name}</h3>
+        <p className="text-gray-600 text-center mb-4">{position}</p>
+        <p className="text-gray-700 text-center">{bio}</p>
       </CardContent>
     </Card>
+  )
+}
+
+function Milestone({ year, title, description }: MilestoneProps) {
+  return (
+    <div className="flex items-start">
+      <div className="flex-shrink-0 w-24 text-right">
+        <span className="text-lg font-semibold text-gray-900">{year}</span>
+      </div>
+      <div className="ml-8 border-l-2 border-gray-300 pl-8 pb-8">
+        <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
+        <p className="text-gray-700">{description}</p>
+      </div>
+    </div>
   )
 }
