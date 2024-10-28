@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight, Users, Target, Award, ChevronRight, Globe, Briefcase, GraduationCap } from 'lucide-react'
+import { ArrowRight, Users, Target, Award, ChevronRight, Globe, Briefcase, GraduationCap, Layers } from 'lucide-react'
 
 interface TeamMemberProps {
   name: string;
@@ -33,8 +33,8 @@ export default function About() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/placeholder.svg?height=40&width=40" alt="Astris Global Consulting Logo" className="h-12 w-auto" />
-            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Astris Global Consulting</h1>
+            <img src="/placeholder.svg?height=40&width=40" alt="Aurelect Advisory Logo" className="h-12 w-auto" />
+            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Aurelect Advisory</h1>
           </div>
           <nav>
             <ul className="flex space-x-8">
@@ -57,10 +57,10 @@ export default function About() {
               className="text-center"
             >
               <h1 className="text-4xl font-semibold sm:text-5xl sm:tracking-tight lg:text-6xl mb-6">
-                About Astris Global Consulting
+                About Aurelect Advisory
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-xl sm:text-2xl text-gray-300">
-                Empowering businesses through strategic financial management and innovative solutions.
+                Empowering businesses through comprehensive financial, business advisory, and technology-enabled services.
               </p>
             </motion.div>
           </div>
@@ -78,13 +78,13 @@ export default function About() {
                 <Card className="transition-all duration-300 hover:shadow-lg">
                   <CardHeader>
                     <CardTitle className="flex items-center text-2xl">
-                      <Users className="h-8 w-8 text-gray-700 mr-4" />
-                      Our Team
+                      <Layers className="h-8 w-8 text-gray-700 mr-4" />
+                      Our Services
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base">
-                      Our team of expert financial professionals brings decades of combined experience across various industries, ensuring top-tier advice and solutions for our clients.
+                      We offer a wide range of services including finance outsourcing, accounting, taxation, CFO services, IT solutions, legal services, and more, ensuring comprehensive support for your business needs.
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -139,7 +139,7 @@ export default function About() {
                       <CardTitle>Holistic Perspective</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>At Astris Global Consulting, we believe in taking a comprehensive view of your business. We don't just look at the numbers; we consider your industry, market position, growth potential, and long-term objectives to provide truly impactful financial strategies.</p>
+                      <p>At Aurelect Advisory, we believe in taking a comprehensive view of your business. We consider your financial needs alongside your broader business goals, ensuring our strategies are fully aligned with your overall objectives.</p>
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -149,7 +149,7 @@ export default function About() {
                       <CardTitle>Tailored Solutions</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>We understand that every business is unique. That's why we develop customized financial solutions that address your specific challenges and capitalize on your unique opportunities. Our approach ensures that you receive strategies and advice that are perfectly aligned with your business goals.</p>
+                      <p>We understand that every business is unique.  Aurelect Advisory crafts customized solutions addressing your specific challenges and leveraging your unique opportunities. Our approach ensures strategies and advice perfectly aligned with your business goals, whether they are financial, operational, or technological.</p>
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -159,7 +159,7 @@ export default function About() {
                       <CardTitle>Innovative Thinking</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p>In today's rapidly changing business environment, innovation is key. We constantly stay ahead of the curve, leveraging the latest financial technologies and methodologies to provide you with cutting-edge solutions that give you a competitive edge in your industry.</p>
+                      <p>In today's dynamic business environment, innovation is paramount. Aurelect Advisory stays ahead of the curve, leveraging the latest financial technologies and methodologies to provide cutting-edge solutions that give you a competitive edge. We integrate technology to streamline processes and enhance decision-making.</p>
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -178,21 +178,21 @@ export default function About() {
               <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Leadership Team</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <TeamMember
-                  name="John Doe"
-                  position="Founder & CEO"
-                  bio="With over 25 years of experience in financial consulting, John has led Astris Global Consulting to become a leader in the industry."
+                  name="Placeholder 1"
+                  position="Placeholder Position"
+                  bio="Placeholder Bio"
                   image="/placeholder.svg?height=300&width=300"
                 />
                 <TeamMember
-                  name="Jane Smith"
-                  position="Chief Financial Officer"
-                  bio="Jane brings 20 years of expertise in corporate finance and has been instrumental in developing our innovative financial strategies."
+                  name="Placeholder 2"
+                  position="Placeholder Position"
+                  bio="Placeholder Bio"
                   image="/placeholder.svg?height=300&width=300"
                 />
                 <TeamMember
-                  name="Michael Johnson"
-                  position="Head of Client Relations"
-                  bio="With a strong background in business development, Michael ensures our clients receive unparalleled service and support."
+                  name="Placeholder 3"
+                  position="Placeholder Position"
+                  bio="Placeholder Bio"
                   image="/placeholder.svg?height=300&width=300"
                 />
               </div>
@@ -212,7 +212,7 @@ export default function About() {
                 <Milestone
                   year="2005"
                   title="Foundation"
-                  description="Astris Global Consulting was founded with a vision to provide innovative financial solutions to businesses worldwide."
+                  description="Aurelect Advisory was founded with a vision to provide innovative financial solutions to businesses worldwide."
                 />
                 <Milestone
                   year="2010"
@@ -222,7 +222,7 @@ export default function About() {
                 <Milestone
                   year="2015"
                   title="Global Reach"
-                  description="Astris Global Consulting established offices in major financial hubs, extending our services to clients across the globe."
+                  description="Aurelect Advisory established offices in major financial hubs, extending our services to clients across the globe."
                 />
                 <Milestone
                   year="2020"
@@ -232,7 +232,7 @@ export default function About() {
                 <Milestone
                   year="Today"
                   title="Industry Leader"
-                  description="Astris Global Consulting continues to set the standard for financial consulting, serving a diverse portfolio of clients across various industries."
+                  description="Aurelect Advisory continues to set the standard for financial consulting, serving a diverse portfolio of clients across various industries."
                 />
               </div>
             </motion.div>
@@ -266,8 +266,8 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Astris Global Consulting</h3>
-              <p className="text-gray-400">Empowering businesses through strategic financial management and innovative solutions.</p>
+              <h3 className="text-2xl font-semibold mb-6">Aurelect Advisory</h3>
+              <p className="text-gray-400">Empowering businesses through comprehensive financial, business advisory, and technology-enabled services.</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
@@ -281,12 +281,12 @@ export default function About() {
             <div>
               <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
               <p className="text-gray-400 mb-4">123 Financial Street<br />Business City, BZ 12345</p>
-              <p className="text-gray-400">contact@astrisglobal.com</p>
+              <p className="text-gray-400">contact@aurelectadvisory.com</p>
               <p className="text-gray-400">+1 (555) 123-4567</p>
             </div>
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2023 Astris Global Consulting. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2023 Aurelect Advisory. All rights reserved.</p>
           </div>
         </div>
       

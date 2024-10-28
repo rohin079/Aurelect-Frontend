@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight, BarChart, DollarSign, ShieldCheck, BookOpen, Calculator, Users, CheckCircle, TrendingUp } from 'lucide-react'
+import { ArrowRight, BarChart, DollarSign, ShieldCheck, BookOpen, Calculator, Users, CheckCircle, TrendingUp, FileText, Server, Scale, Layers } from 'lucide-react'
 
 interface ServiceCardProps {
   title: string;
@@ -37,8 +37,8 @@ export default function Home() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/placeholder.svg?height=40&width=40" alt="Astris Global Consulting Logo" className="h-12 w-auto" />
-            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Astris Global Consulting</h1>
+            <img src="/placeholder.svg?height=40&width=40" alt="Aurelect Advisory Logo" className="h-12 w-auto" />
+            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Aurelect Advisory</h1>
           </div>
           <nav>
             <ul className="flex space-x-8">
@@ -73,7 +73,7 @@ export default function Home() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6 border-white text-gray-900 hover:bg-gray-100 hover:text-gray-900">
+                <Button asChild size="lg" variant="outline" className="text-lg px-8 py-6  text-gray-900  hover:text-gray-900">
                   <Link href="/services">
                     Our Services
                   </Link>
@@ -93,34 +93,34 @@ export default function Home() {
               <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Services</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <ServiceCard
-                  title="CFO Services"
-                  description="Strategic financial planning and analysis to drive your business forward."
+                  title="Finance Outsourcing"
+                  description="Comprehensive financial management and advisory services."
                   icon={<BarChart className="h-10 w-10 text-gray-700" />}
                 />
                 <ServiceCard
-                  title="Outsourcing Solutions"
-                  description="Efficient handling of day-to-day financial operations and compliance."
+                  title="Bookkeeping & Accounting"
+                  description="Full-spectrum accounting services for global businesses."
                   icon={<Calculator className="h-10 w-10 text-gray-700" />}
                 />
                 <ServiceCard
-                  title="Risk Management"
-                  description="Proactive identification and mitigation of financial risks."
-                  icon={<ShieldCheck className="h-10 w-10 text-gray-700" />}
+                  title="Taxation Services"
+                  description="Expert tax advisory and compliance services."
+                  icon={<FileText className="h-10 w-10 text-gray-700" />}
                 />
                 <ServiceCard
-                  title="Financial Analysis"
-                  description="In-depth examination of financial statements and performance metrics."
-                  icon={<TrendingUp className="h-10 w-10 text-gray-700" />}
+                  title="CFO Services"
+                  description="Strategic financial leadership on a consultancy basis."
+                  icon={<Users className="h-10 w-10 text-gray-700" />}
                 />
                 <ServiceCard
-                  title="Strategic Planning"
-                  description="Developing actionable financial strategies aligned with your business goals."
-                  icon={<BookOpen className="h-10 w-10 text-gray-700" />}
+                  title="IT & Networking Services"
+                  description="Comprehensive IT solutions and system integration."
+                  icon={<Server className="h-10 w-10 text-gray-700" />}
                 />
                 <ServiceCard
-                  title="Profitability Analysis"
-                  description="Evaluating product and service profitability for informed decision-making."
-                  icon={<DollarSign className="h-10 w-10 text-gray-700" />}
+                  title="Legal & Corporate Services"
+                  description="Business formation and legal compliance assistance."
+                  icon={<Scale className="h-10 w-10 text-gray-700" />}
                 />
               </div>
             </motion.div>
@@ -139,13 +139,13 @@ export default function Home() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center text-xl">
-                      <Users className="h-6 w-6 text-gray-700 mr-2" />
-                      Expert Team
+                      <Layers className="h-6 w-6 text-gray-700 mr-2" />
+                      Comprehensive Solutions
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base">
-                      Our team of financial experts brings years of industry experience to your business, ensuring top-tier advice and solutions.
+                      From finance to IT, we offer a wide range of services to address all aspects of your business needs.
                     </CardDescription>
                   </CardContent>
                 </Card>
@@ -314,7 +314,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Astris Global Consulting</h3>
+              <h3 className="text-2xl font-semibold mb-6">Aurelect Advisory</h3>
               <p className="text-gray-400">Empowering businesses through strategic financial management and innovative solutions.</p>
             </div>
             <div>
@@ -329,12 +329,12 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
               <p className="text-gray-400 mb-4">123 Financial Street<br />Business City, BZ 12345</p>
-              <p className="text-gray-400">contact@astrisglobal.com</p>
+              <p className="text-gray-400">contact@aurelectadvisory.com</p>
               <p className="text-gray-400">+1 (555) 123-4567</p>
             </div>
           </div>
           <div className="mt-12 border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400">&copy; 2023 Astris Global Consulting. All rights reserved.</p>
+            <p className="text-gray-400">&copy; 2023 Aurelect Advisory. All rights reserved.</p>
           </div>
         </div>
       </footer>
