@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -23,7 +24,18 @@ import {
   CheckCircle,
   BookOpen,
   Server,
-} from "lucide-react";
+  FileText,
+  CreditCard,
+  ClipboardList,
+  UserCheck,
+  RefreshCw,
+  Zap,
+  PieChart,
+  Briefcase,
+  GraduationCap,
+  Globe,
+  Cpu
+} from "lucide-react"
 
 interface ServiceCardProps {
   title: string;
@@ -50,10 +62,11 @@ export default function Services() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="flex items-center">
-            <img
-              src="/placeholder.svg?height=40&width=40"
+            <Image
+              src="/logo.png"
               alt="Aurelect Advisory Logo"
-              className="h-12 w-auto"
+              width={48}
+              height={48}
             />
             <h1 className="ml-3 text-2xl font-semibold text-gray-900">
               Aurelect Advisory
@@ -131,8 +144,8 @@ export default function Services() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <ServiceCard
                   title="CFO Services"
-                  description="Comprehensive financial management, bookkeeping, and CFO services."
-                  icon={<BarChart className="h-10 w-10 text-gray-700" />}
+                  description="Comprehensive financial management and CFO services."
+                  icon={<BarChart className="h-10 w-10 text-blue-600" />}
                   features={[
                     "Financial Strategy and Planning",
                     "Cash Flow Management",
@@ -146,8 +159,8 @@ export default function Services() {
                 />
                 <ServiceCard
                   title="Financial Controller Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Expert financial control and management solutions."
+                  icon={<Calculator className="h-10 w-10 text-green-600" />}
                   features={[
                     "Accounting Management",
                     "Financial Reporting",
@@ -155,15 +168,15 @@ export default function Services() {
                     "Internal Controls and Compliance",
                     "Cash Flow and Expense Management",
                     "Tax Planning and Compliance",
-                    "Inventory and Cost Accounting (if applicable)",
+                    "Inventory and Cost Accounting",
                     "Audit and Risk Management",
                     "System Implementation and Integration",
                   ]}
                 />
                 <ServiceCard
                   title="Bookkeeping Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Accurate and efficient bookkeeping solutions."
+                  icon={<FileText className="h-10 w-10 text-purple-600" />}
                   features={[
                     "Transaction Recording",
                     "Bank and Credit Card Reconciliation",
@@ -176,11 +189,10 @@ export default function Services() {
                     "Financial Report Preparation",
                   ]}
                 />
-
                 <ServiceCard
                   title="Accounting Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Comprehensive accounting and financial management."
+                  icon={<PieChart className="h-10 w-10 text-red-600" />}
                   features={[
                     "Financial Reporting and Analysis",
                     "Budgeting and Forecasting",
@@ -191,11 +203,10 @@ export default function Services() {
                     "Treasury and Cash Management",
                   ]}
                 />
-
                 <ServiceCard
-                  title="Payroll processing Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  title="Payroll Processing Services"
+                  description="Efficient and accurate payroll management."
+                  icon={<CreditCard className="h-10 w-10 text-yellow-600" />}
                   features={[
                     "Employee Compensation Management",
                     "Tax Withholding and Compliance",
@@ -207,13 +218,12 @@ export default function Services() {
                     "Customized Payroll Solutions",
                   ]}
                 />
-
                 <ServiceCard
                   title="Tax Support Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Comprehensive tax planning and compliance solutions."
+                  icon={<ClipboardList className="h-10 w-10 text-indigo-600" />}
                   features={[
-                    "Tax Preperation and Filing",
+                    "Tax Preparation and Filing",
                     "Tax Planning and Strategy",
                     "Tax Compliance and Advisory",
                     "International and Cross-Border Tax",
@@ -223,56 +233,6 @@ export default function Services() {
                     "Payroll Tax Services",
                     "Tax Credits and Incentives",
                     "Sales and Use Tax Services",
-                  ]}
-                />
-
-                <ServiceCard
-                  title="Audit Support Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Audit Preparation and Planning",
-                    "Financial Statement Audit",
-                    "Internal Audit and Compliance",
-                    "Audit Documentation and Evidence Collection",
-                    "Audit Liaison and Support",
-                    "Audit Findings and Report Review",
-                    "Post-Audit Support and Recommendations",
-                    "Specialized Audit Support Services",
-                    "External Audit Preperation for Board and Stakeholders",
-                  ]}
-                />
-
-                <ServiceCard
-                  title="HR Operation Support Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Employee Data Management",
-                    "Recruitment and Onboarding Support",
-                    "Payroll Processing and Benefits Administration",
-                    "Performance Management Support",
-                    "Learning and Development Coordination",
-                    "Time and Attendance Tracking",
-                    "Employee Engagement and Retention",
-                    "HR Policy and Compliance",
-                  ]}
-                />
-
-                <ServiceCard
-                  title="Clean-Up and Catch-Up Project Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Historical Data Review and Reconciliation",
-                    "Correcting Inaccurate Entries",
-                    "Tax Compliance and Filing",
-                    "Payroll Clean-Up",
-                    "AP and AR Cleanup",
-                    "Financial Statement Preparation",
-                    "Software and System Updates",
-                    "Compliance and Internal Controls",
-                    "Ongoing Support and Maintenance",
                   ]}
                 />
               </div>
@@ -293,8 +253,8 @@ export default function Services() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <ServiceCard
                   title="Accounting Automation Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Streamline your accounting processes with cutting-edge automation."
+                  icon={<Zap className="h-10 w-10 text-orange-600" />}
                   features={[
                     "Automation of Bookkeeping Tasks",
                     "Accounts Payable (AP) Automation",
@@ -305,11 +265,10 @@ export default function Services() {
                     "Expense Management Automation",
                   ]}
                 />
-
                 <ServiceCard
                   title="Board Meeting Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Comprehensive support for effective board meetings."
+                  icon={<Briefcase className="h-10 w-10 text-teal-600" />}
                   features={[
                     "Meeting Planning and Preparation",
                     "Meeting Facilitation",
@@ -319,11 +278,10 @@ export default function Services() {
                     "Strategic Planning and Review",
                   ]}
                 />
-
                 <ServiceCard
                   title="Training Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
+                  description="Empower your team with expert financial training."
+                  icon={<GraduationCap className="h-10 w-10 text-pink-600" />}
                   features={[
                     "Accounting and Bookkeeping Skills",
                     "Taxation Knowledge",
@@ -333,50 +291,47 @@ export default function Services() {
                     "Ongoing Support and Resources",
                   ]}
                 />
-
                 <ServiceCard
-                  title="Shared and Global Business - Consultancy Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Assessment and Strategy Development",
-                    "Design and Implementation",
-                    "Technology Enablement",
-                    "Change Management",
-                    "Performance Measurement and Continuous Improvement",
-                    "Risk Management and Compliance",
-                    "Industry-Specific Solutions",
-                  ]}
-                />
-
-                <ServiceCard
-                  title="Finance Transformation Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Current State Assessment",
-                    "Strategy Development",
-                    "Process Optimization",
-                    "Technology Enablement",
-                    "Talent Management and Organizational Design",
-                    "Performance Measurement and Continuous Improvement",
-                    "Compliance and Risk Management",
-                    "Stakeholder Communication and Reporting",
-                  ]}
-                />
-
-                <ServiceCard
-                  title="Fintech Services"
-                  description="IT solutions, software development, and business process outsourcing."
-                  icon={<Server className="h-10 w-10 text-gray-700" />}
-                  features={[
-                    "Implementation of Accounting Software",
-                    "Cloud Based Accounting Solutions",
-                    "Payment Processing Solutions",
-                    "Financial Literacy and Training Program",
-                    "Vendor Management and Payment Solutions",
-                  ]}
-                />
+                title="Shared and Global Business - Consultancy Services"
+                description="Expert guidance for shared services and global business operations."
+                icon={<Globe className="h-10 w-10 text-blue-600" />}
+                features={[
+                  "Assessment and Strategy Development",
+                  "Design and Implementation",
+                  "Technology Enablement",
+                  "Change Management",
+                  "Performance Measurement and Continuous Improvement",
+                  "Risk Management and Compliance",
+                  "Industry-Specific Solutions",
+                ]}
+              />
+              <ServiceCard
+                title="Finance Transformation Services"
+                description="Revolutionize your financial processes and strategies."
+                icon={<TrendingUp className="h-10 w-10 text-purple-600" />}
+                features={[
+                  "Current State Assessment",
+                  "Strategy Development",
+                  "Process Optimization",
+                  "Technology Enablement",
+                  "Talent Management and Organizational Design",
+                  "Performance Measurement and Continuous Improvement",
+                  "Compliance and Risk Management",
+                  "Stakeholder Communication and Reporting",
+                ]}
+              />
+              <ServiceCard
+                title="Fintech Services"
+                description="Leverage cutting-edge financial technology solutions."
+                icon={<Cpu className="h-10 w-10 text-green-600" />}
+                features={[
+                  "Implementation of Accounting Software",
+                  "Cloud Based Accounting Solutions",
+                  "Payment Processing Solutions",
+                  "Financial Literacy and Training Program",
+                  "Vendor Management and Payment Solutions",
+                ]}
+              />
               </div>
             </motion.div>
           </div>

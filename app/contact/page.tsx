@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -12,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Toast } from "@/components/ui/toast"
-import { Mail, Phone, MapPin, Globe, Clock, Users, Building, MessageSquare, Send } from 'lucide-react'
+import { Mail, Phone, MapPin, Globe, Clock, Users, Building, MessageSquare, Send, ArrowRight } from 'lucide-react'
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -67,53 +67,61 @@ export default function Contact() {
       serviceDescription: formData.get('service-description'),
       message: formData.get('message'),
     }
-    
-    // Here you would typically send this data to your server
-    // For demonstration, we'll just log it and show a toast
     console.log(data)
     setShowToast(true)
     setTimeout(() => setShowToast(false), 3000)
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
-          <div className="flex items-center">
-            <img src="/placeholder.svg?height=40&width=40" alt="Aurelect Advisory Logo" className="h-12 w-auto" />
-            <h1 className="ml-3 text-2xl font-semibold text-gray-900">Aurelect Advisory</h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-4">
+              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="h-10 w-auto" />
+              <span className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                Aurelect Advisory
+              </span>
+            </div>
+            <nav className="hidden md:block">
+              <ul className="flex space-x-8">
+                {['Home', 'Services', 'About', 'Contact'].map((item) => (
+                  <li key={item}>
+                    <Link 
+                      href={`/${item.toLowerCase()}`}
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
-          <nav>
-            <ul className="flex space-x-8">
-              <li><Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">Home</Link></li>
-              <li><Link href="/services" className="text-gray-600 hover:text-gray-900 transition-colors">Services</Link></li>
-              <li><Link href="/about" className="text-gray-600 hover:text-gray-900 transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">Contact</Link></li>
-            </ul>
-          </nav>
         </div>
       </header>
 
-      <main className="flex-grow">
-        <section className="bg-gray-900 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="pt-16">
+        <section className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 py-32">
+          <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:32px]" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-4xl font-semibold sm:text-5xl sm:tracking-tight lg:text-6xl mb-6">
-                Get in Touch
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                Let's Work Together
               </h1>
-              <p className="mt-6 max-w-2xl mx-auto text-xl sm:text-2xl text-gray-300">
-                We're here to answer your questions and provide the financial and business guidance you need.
+              <p className="text-xl md:text-2xl text-blue-100 max-w-2xl mx-auto">
+                Transform your business with our expert guidance and comprehensive solutions.
               </p>
             </motion.div>
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -121,95 +129,146 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Tabs defaultValue="contact-form" className="w-full">
-                <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsList className="grid w-full md:w-96 grid-cols-2 mx-auto mb-12">
                   <TabsTrigger value="contact-form">Contact Form</TabsTrigger>
-                  <TabsTrigger value="contact-info">Contact Information</TabsTrigger>
+                  <TabsTrigger value="contact-info">Contact Info</TabsTrigger>
                 </TabsList>
                 <TabsContent value="contact-form">
-                  <Card>
+                  <Card className="border-0 shadow-lg">
                     <CardHeader>
-                      <CardTitle className="text-2xl">Send us a message</CardTitle>
-                      <CardDescription>Fill out the form below and we'll get back to you shortly.</CardDescription>
+                      <CardTitle className="text-2xl font-bold">Get Started Today</CardTitle>
+                      <CardDescription>Tell us about your project and we'll get back to you promptly.</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <form className="space-y-6" onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          <div>
-                            <Label htmlFor="name">Name</Label>
-                            <Input id="name" name="name" placeholder="Your name" className="mt-1" required />
-                          </div>
-                          <div>
-                            <Label htmlFor="email">Email</Label>
-                            <Input id="email" name="email" type="email" placeholder="Your email" className="mt-1" required />
-                          </div>
-                        </div>
-                        <div>
-                          <Label htmlFor="phone">Phone</Label>
-                          <Input id="phone" name="phone" type="tel" placeholder="Your phone number" className="mt-1" required />
-                        </div>
-                        <div>
-                          <Label htmlFor="services">Services of Interest</Label>
                           <div className="space-y-2">
+                            <Label htmlFor="name">Full Name</Label>
+                            <Input 
+                              id="name" 
+                              name="name" 
+                              placeholder="John Doe"
+                              className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                              required 
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="email">Email Address</Label>
+                            <Input 
+                              id="email" 
+                              name="email" 
+                              type="email" 
+                              placeholder="john@example.com"
+                              className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                              required 
+                            />
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="services">Services Required</Label>
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {serviceOptions.map((option) => (
-                              <div key={option.value} className="flex items-center space-x-2">
-                                <Checkbox id={option.value} name="services" value={option.value} />
-                                <label htmlFor={option.value} className="text-sm text-gray-700">{option.label}</label>
+                              <div 
+                                key={option.value}
+                                className="flex items-start space-x-3 p-4 rounded-lg border border-gray-200 hover:border-blue-500 transition-colors cursor-pointer"
+                              >
+                                <Checkbox 
+                                  id={option.value} 
+                                  name="services" 
+                                  value={option.value}
+                                  className="mt-1"
+                                />
+                                <div>
+                                  <label 
+                                    htmlFor={option.value}
+                                    className="block text-sm font-medium text-gray-900 mb-1"
+                                  >
+                                    {option.label}
+                                  </label>
+                                  <p className="text-xs text-gray-500">{option.description}</p>
+                                </div>
                               </div>
                             ))}
                           </div>
                         </div>
-                        <div>
-                          <Label htmlFor="service-description">Service Descriptions</Label>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="message">Your Message</Label>
                           <Textarea 
-                            id="service-description" 
-                            name="service-description" 
-                            placeholder="Please provide a short description for each selected service" 
-                            className="mt-1" 
+                            id="message" 
+                            name="message" 
+                            placeholder="Tell us about your project..."
+                            className="min-h-32 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                            required 
                           />
                         </div>
-                        <div>
-                          <Label htmlFor="message">Message</Label>
-                          <Textarea id="message" name="message" placeholder="Your message" className="mt-1" required />
-                        </div>
+
                         <div className="flex items-center space-x-2">
                           <Checkbox id="terms" name="terms" required />
-                          <label
-                            htmlFor="terms"
-                            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                          >
-                            I agree to the terms and conditions
+                          <label htmlFor="terms" className="text-sm text-gray-600">
+                            I agree to the{" "}
+                            <Link href="/terms" className="text-blue-600 hover:underline">
+                              terms and conditions
+                            </Link>
                           </label>
                         </div>
-                        <Button type="submit" className="w-full">
+
+                        <Button 
+                          type="submit" 
+                          className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                        >
                           Send Message
-                          <Send className="ml-2 h-4 w-4" />
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
                       </form>
                     </CardContent>
                   </Card>
                 </TabsContent>
+
                 <TabsContent value="contact-info">
-                  <Card>
+                  <Card className="border-0 shadow-lg">
                     <CardHeader>
-                      <CardTitle className="text-2xl">Contact Information</CardTitle>
-                      <CardDescription>Reach out to us through any of the following channels.</CardDescription>
+                      <CardTitle className="text-2xl font-bold">Contact Information</CardTitle>
+                      <CardDescription>Get in touch with us through any of these channels.</CardDescription>
                     </CardHeader>
-                    <CardContent className="space-y-6">
-                      <ContactInfo icon={<Mail className="h-6 w-6" />} title="Email" content="info@aurelect.com" />
-                      <ContactInfo icon={<Phone className="h-6 w-6" />} title="Phone" content="+1 (555) 123-4567" />
-                      <ContactInfo icon={<MapPin className="h-6 w-6" />} title="Address" content="123 Business Street, Financial District, BZ 12345" />
-                      <ContactInfo icon={<Globe className="h-6 w-6" />} title="Website" content={<Link href="https://www.aurelect.com" className="text-blue-600 hover:underline">www.aurelect.com</Link>} />
-                      <ContactInfo 
-                        icon={<Clock className="h-6 w-6" />} 
-                        title="Business Hours" 
-                        content={
-                          <div>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p>Saturday: 10:00 AM - 2:00 PM</p>
-                            <p>Sunday: Closed</p>
-                          </div>
-                        } 
-                      />
+                    <CardContent>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <ContactInfo 
+                          icon={<Mail className="h-6 w-6 text-blue-600" />}
+                          title="Email Us"
+                          content={
+                            <a href="mailto:info@aurelect.com" className="text-blue-600 hover:underline">
+                              info@aurelect.com
+                            </a>
+                          }
+                        />
+                        <ContactInfo 
+                          icon={<Phone className="h-6 w-6 text-blue-600" />}
+                          title="Call Us"
+                          content={
+                            <a href="tel:+15551234567" className="text-blue-600 hover:underline">
+                              +1 (555) 123-4567
+                            </a>
+                          }
+                        />
+                        <ContactInfo 
+                          icon={<MapPin className="h-6 w-6 text-blue-600" />}
+                          title="Visit Us"
+                          content="123 Business Street, Financial District, BZ 12345"
+                        />
+                        <ContactInfo 
+                          icon={<Clock className="h-6 w-6 text-blue-600" />}
+                          title="Business Hours"
+                          content={
+                            <div className="space-y-1">
+                              <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                              <p>Sat: 10:00 AM - 2:00 PM</p>
+                              <p>Sun: Closed</p>
+                            </div>
+                          }
+                        />
+                      </div>
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -217,54 +276,6 @@ export default function Contact() {
             </motion.div>
           </div>
         </section>
-
-        <section className="py-20 bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">How We Can Help</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-xl">
-                      <Users className="h-6 w-6 mr-2" />
-                      Comprehensive Services
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>From finance outsourcing to IT solutions, we offer a wide range of services to meet all your business needs.</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-xl">
-                      <Building className="h-6 w-6 mr-2" />
-                      Tailored Solutions
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>We develop customized strategies and solutions that align with your company's unique challenges and opportunities.</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-xl">
-                      <MessageSquare className="h-6 w-6 mr-2" />
-                      Expert Support
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Our team of experts provides continuous support and guidance to ensure the successful implementation of our strategies.</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
