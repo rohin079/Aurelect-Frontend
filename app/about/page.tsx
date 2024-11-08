@@ -18,6 +18,7 @@ import {
   GraduationCap,
   Layers,
 } from "lucide-react"
+import Navbar from "@/components/navbar"
 
 interface TeamMemberProps {
   name: string
@@ -41,31 +42,7 @@ export default function About() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <Image src="/logo.png" alt="Aurelect Advisory Logo" width={40} height={40} />
-            <h1 className="ml-3 text-xl font-semibold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-              Aurelect Advisory
-            </h1>
-          </div>
-          <nav>
-            <ul className="flex space-x-8">
-              {["Home", "Services", "About", "Contact"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors relative group"
-                  >
-                    {item}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gray-900 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </header>
+     <Navbar />
 
       <main className="flex-grow">
         <section className="relative py-24 overflow-hidden">

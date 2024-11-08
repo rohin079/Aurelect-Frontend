@@ -1,9 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,29 +10,25 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
 import {
   ArrowRight,
   BarChart,
-  Calculator,
-  ShieldCheck,
-  DollarSign,
-  TrendingUp,
-  Users,
-  CheckCircle,
-  BookOpen,
-  Server,
-  FileText,
-  CreditCard,
-  ClipboardList,
-  UserCheck,
-  RefreshCw,
-  Zap,
-  PieChart,
   Briefcase,
-  GraduationCap,
+  Calculator,
+  CheckCircle,
+  ClipboardList,
+  Cpu,
+  CreditCard,
+  FileText,
   Globe,
-  Cpu
-} from "lucide-react"
+  GraduationCap,
+  PieChart,
+  TrendingUp,
+  Zap
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface ServiceCardProps {
   title: string;
@@ -59,60 +52,12 @@ export default function Services() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
-          <div className="flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Aurelect Advisory Logo"
-              width={48}
-              height={48}
-            />
-            <h1 className="ml-3 text-2xl font-semibold text-gray-900">
-              Aurelect Advisory
-            </h1>
-          </div>
-          <nav>
-            <ul className="flex space-x-8">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      {/* Header - Matching homepage style */}
+      <Navbar />
 
-      <main className="flex-grow">
-        <section className="bg-gray-900 text-white py-20">
+      <main className="flex-grow pt-16">
+        {/* Hero section - Matching homepage gradient */}
+        <section className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-20 h-96">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -120,7 +65,7 @@ export default function Services() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h1 className="text-4xl font-semibold sm:text-5xl sm:tracking-tight lg:text-6xl mb-6">
+              <h1 className="text-4xl font-semibold sm:text-5xl sm:tracking-tight lg:text-6xl mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                 Our Services
               </h1>
               <p className="mt-6 max-w-2xl mx-auto text-xl sm:text-2xl text-gray-300">
@@ -131,6 +76,7 @@ export default function Services() {
           </div>
         </section>
 
+        {/* Services sections retain their structure but update colors */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -142,6 +88,7 @@ export default function Services() {
                 Comprehensive Business Solutions
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                {/* First set of ServiceCards */}
                 <ServiceCard
                   title="CFO Services"
                   description="Comprehensive financial management and CFO services."
@@ -292,46 +239,46 @@ export default function Services() {
                   ]}
                 />
                 <ServiceCard
-                title="Shared and Global Business - Consultancy Services"
-                description="Expert guidance for shared services and global business operations."
-                icon={<Globe className="h-10 w-10 text-blue-600" />}
-                features={[
-                  "Assessment and Strategy Development",
-                  "Design and Implementation",
-                  "Technology Enablement",
-                  "Change Management",
-                  "Performance Measurement and Continuous Improvement",
-                  "Risk Management and Compliance",
-                  "Industry-Specific Solutions",
-                ]}
-              />
-              <ServiceCard
-                title="Finance Transformation Services"
-                description="Revolutionize your financial processes and strategies."
-                icon={<TrendingUp className="h-10 w-10 text-purple-600" />}
-                features={[
-                  "Current State Assessment",
-                  "Strategy Development",
-                  "Process Optimization",
-                  "Technology Enablement",
-                  "Talent Management and Organizational Design",
-                  "Performance Measurement and Continuous Improvement",
-                  "Compliance and Risk Management",
-                  "Stakeholder Communication and Reporting",
-                ]}
-              />
-              <ServiceCard
-                title="Fintech Services"
-                description="Leverage cutting-edge financial technology solutions."
-                icon={<Cpu className="h-10 w-10 text-green-600" />}
-                features={[
-                  "Implementation of Accounting Software",
-                  "Cloud Based Accounting Solutions",
-                  "Payment Processing Solutions",
-                  "Financial Literacy and Training Program",
-                  "Vendor Management and Payment Solutions",
-                ]}
-              />
+                  title="Shared and Global Business - Consultancy Services"
+                  description="Expert guidance for shared services and global business operations."
+                  icon={<Globe className="h-10 w-10 text-blue-600" />}
+                  features={[
+                    "Assessment and Strategy Development",
+                    "Design and Implementation",
+                    "Technology Enablement",
+                    "Change Management",
+                    "Performance Measurement and Continuous Improvement",
+                    "Risk Management and Compliance",
+                    "Industry-Specific Solutions",
+                  ]}
+                />
+                <ServiceCard
+                  title="Finance Transformation Services"
+                  description="Revolutionize your financial processes and strategies."
+                  icon={<TrendingUp className="h-10 w-10 text-purple-600" />}
+                  features={[
+                    "Current State Assessment",
+                    "Strategy Development",
+                    "Process Optimization",
+                    "Technology Enablement",
+                    "Talent Management and Organizational Design",
+                    "Performance Measurement and Continuous Improvement",
+                    "Compliance and Risk Management",
+                    "Stakeholder Communication and Reporting",
+                  ]}
+                />
+                <ServiceCard
+                  title="Fintech Services"
+                  description="Leverage cutting-edge financial technology solutions."
+                  icon={<Cpu className="h-10 w-10 text-green-600" />}
+                  features={[
+                    "Implementation of Accounting Software",
+                    "Cloud Based Accounting Solutions",
+                    "Payment Processing Solutions",
+                    "Financial Literacy and Training Program",
+                    "Vendor Management and Payment Solutions",
+                  ]}
+                />
               </div>
             </motion.div>
           </div>
@@ -447,7 +394,8 @@ export default function Services() {
           </div>
         </section>
 
-        <section className="py-20 bg-gray-900 text-white">
+        {/* CTA Section - Matching homepage gradient */}
+        <section className="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -465,7 +413,7 @@ export default function Services() {
               <Button
                 asChild
                 size="lg"
-                className="text-lg px-8 py-6 bg-white text-gray-900 hover:bg-gray-100"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-6"
               >
                 <Link href="/contact">
                   Schedule a Consultation
@@ -477,6 +425,7 @@ export default function Services() {
         </section>
       </main>
 
+      {/* Footer remains the same structure but matches homepage colors */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -562,7 +511,7 @@ function ServiceCard({ title, description, icon, features }: ServiceCardProps) {
         <ul className="space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center text-gray-700">
-              <CheckCircle className="h-5 w-5 mr-2 text-green-500" />
+              <CheckCircle className="h-5 w-5 mr-2 text-blue-600" />
               {feature}
             </li>
           ))}
@@ -578,7 +527,7 @@ function Testimonial({ quote, author, position }: TestimonialProps) {
       <CardContent className="pt-6">
         <div className="mb-4">
           <svg
-            className="h-8 w-8 text-gray-400"
+            className="h-8 w-8 text-blue-600"
             fill="currentColor"
             viewBox="0 0 32 32"
           >

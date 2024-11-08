@@ -13,6 +13,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Toast } from "@/components/ui/toast"
 import { Mail, Phone, MapPin, Globe, Clock, Users, Building, MessageSquare, Send, ArrowRight } from 'lucide-react'
+import Navbar from '@/components/navbar';
+import WhatsApp from '@/components/whatsapp';
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -74,32 +76,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-4">
-              <img src="/placeholder.svg?height=40&width=40" alt="Logo" className="h-10 w-auto" />
-              <span className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-                Aurelect Advisory
-              </span>
-            </div>
-            <nav className="hidden md:block">
-              <ul className="flex space-x-8">
-                {['Home', 'Services', 'About', 'Contact'].map((item) => (
-                  <li key={item}>
-                    <Link 
-                      href={`/${item.toLowerCase()}`}
-                      className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="pt-16">
         <section className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 py-32">
@@ -144,49 +121,49 @@ export default function Contact() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="name">Full Name</Label>
-                            <Input 
-                              id="name" 
-                              name="name" 
+                            <Input
+                              id="name"
+                              name="name"
                               placeholder="John Doe"
                               className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                              required 
+                              required
                             />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="email">Email Address</Label>
-                            <Input 
-                              id="email" 
-                              name="email" 
-                              type="email" 
+                            <Input
+                              id="email"
+                              name="email"
+                              type="email"
                               placeholder="john@example.com"
                               className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                              required 
+                              required
                             />
                           </div>
                         </div>
-                        
+
                         <div className="space-y-2">
                           <Label htmlFor="services">Services Required</Label>
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {serviceOptions.map((option) => (
-                              <div 
+                              <div
                                 key={option.value}
                                 className="flex items-start space-x-3 p-4 rounded-lg border border-gray-200 hover:border-blue-500 transition-colors cursor-pointer"
                               >
-                                <Checkbox 
-                                  id={option.value} 
-                                  name="services" 
+                                <Checkbox
+                                  id={option.value}
+                                  name="services"
                                   value={option.value}
                                   className="mt-1"
                                 />
                                 <div>
-                                  <label 
+                                  <label
                                     htmlFor={option.value}
-                                    className="block text-sm font-medium text-gray-900 mb-1"
+                                    className="block text-md font-semibold text-gray-900 mb-1"
                                   >
                                     {option.label}
                                   </label>
-                                  <p className="text-xs text-gray-500">{option.description}</p>
+                                  <p className="text-sm text-gray-500">{option.description}</p>
                                 </div>
                               </div>
                             ))}
@@ -195,12 +172,12 @@ export default function Contact() {
 
                         <div className="space-y-2">
                           <Label htmlFor="message">Your Message</Label>
-                          <Textarea 
-                            id="message" 
-                            name="message" 
+                          <Textarea
+                            id="message"
+                            name="message"
                             placeholder="Tell us about your project..."
                             className="min-h-32 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                            required 
+                            required
                           />
                         </div>
 
@@ -214,8 +191,8 @@ export default function Contact() {
                           </label>
                         </div>
 
-                        <Button 
-                          type="submit" 
+                        <Button
+                          type="submit"
                           className="w-full h-12 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
                         >
                           Send Message
@@ -234,7 +211,7 @@ export default function Contact() {
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <ContactInfo 
+                        <ContactInfo
                           icon={<Mail className="h-6 w-6 text-blue-600" />}
                           title="Email Us"
                           content={
@@ -243,7 +220,7 @@ export default function Contact() {
                             </a>
                           }
                         />
-                        <ContactInfo 
+                        <ContactInfo
                           icon={<Phone className="h-6 w-6 text-blue-600" />}
                           title="Call Us"
                           content={
@@ -252,12 +229,12 @@ export default function Contact() {
                             </a>
                           }
                         />
-                        <ContactInfo 
+                        <ContactInfo
                           icon={<MapPin className="h-6 w-6 text-blue-600" />}
                           title="Visit Us"
                           content="123 Business Street, Financial District, BZ 12345"
                         />
-                        <ContactInfo 
+                        <ContactInfo
                           icon={<Clock className="h-6 w-6 text-blue-600" />}
                           title="Business Hours"
                           content={
@@ -285,24 +262,24 @@ export default function Contact() {
             >
               <h2 className="text-3xl font-semibold text-gray-900  mb-12 text-center">Frequently Asked Questions</h2>
               <Accordion type="single" collapsible className="w-full">
-                <FAQ 
-                  question="What services does Aurelect Advisory offer?" 
+                <FAQ
+                  question="What services does Aurelect Advisory offer?"
                   answer="Aurelect Advisory offers a wide range of services including finance outsourcing, bookkeeping and accounting, taxation services, CFO services, company creation and corporate services, KPO and BPO services, back-office operations, HR solutions, IT and networking services, software development, e-commerce solutions, server maintenance, legal services, and financial consulting and advisory."
                 />
-                <FAQ 
-                  question="How can I schedule a consultation?" 
+                <FAQ
+                  question="How can I schedule a consultation?"
                   answer="You can schedule a consultation by filling out the contact form on this page, calling our office directly, or sending an email to info@aurelect.com. One of our representatives will get back to you promptly to arrange a meeting at a time that's convenient for you."
                 />
-                <FAQ 
-                  question="Do you work with businesses of all sizes?" 
+                <FAQ
+                  question="Do you work with businesses of all sizes?"
                   answer="Yes, we work with businesses of all sizes, from startups to large corporations. Our services are tailored to meet the specific needs and goals of each client, regardless of their size or industry."
                 />
-                <FAQ 
-                  question="What industries do you specialize in?" 
+                <FAQ
+                  question="What industries do you specialize in?"
                   answer="While we have experience across various industries, our comprehensive range of services allows us to cater to businesses in finance, technology, healthcare, manufacturing, retail, and professional services sectors. Our expertise allows us to adapt our services to any industry's specific needs."
                 />
-                <FAQ 
-                  question="How can Aurelect Advisory help my business grow?" 
+                <FAQ
+                  question="How can Aurelect Advisory help my business grow?"
                   answer="Aurelect Advisory can help your business grow by providing expert financial management, streamlining your operations through our outsourcing services, offering strategic advice for business expansion, implementing efficient IT solutions, and ensuring compliance with legal and regulatory requirements. Our holistic approach addresses all aspects of your business, allowing you to focus on core activities and growth opportunities."
                 />
               </Accordion>
@@ -319,12 +296,12 @@ export default function Contact() {
             >
               <h2 className="text-3xl font-semibold text-gray-900 mb-12 text-center">Our Location</h2>
               <div className="aspect-w-16 aspect-h-9">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98823492404069!3d40.75889083440232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1560412335495!5m2!1sen!2sus" 
-                  width="100%" 
-                  height="450" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2412648750455!2d-73.98823492404069!3d40.75889083440232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1560412335495!5m2!1sen!2sus"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
                   loading="lazy"
                 ></iframe>
               </div>
@@ -361,31 +338,6 @@ export default function Contact() {
           </div>
         </div>
       </footer>
-
-      {/* Floating WhatsApp Icon */}
-      <a
-        href="https://wa.me/15551234567"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
-        aria-label="Contact us on WhatsApp"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            fillRule="evenodd"
-            d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
-            clipRule="evenodd"
-          />
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12c0 2.17.7 4.19 1.94 5.86L2.87 21l3.23-1.01c1.57.85 3.36 1.34 5.27 1.34 5.52 0 10-4.48 10-10S17.52 2 12 2zm.97 14.95c-.76.07-1.52.12-2.28-.42-.66-.47-1.14-1.08-1.59-1.73-.45-.65-.81-1.36-1.09-2.09-.28-.73-.4-1.5-.33-2.26.07-.76.29-1.5.66-2.18.37-.68.88-1.29 1.51-1.77.63-.48 1.37-.82 2.15-.95.78-.13 1.58-.05 2.33.23.75.28 1.43.74 1.97 1.34.54.6.93 1.31 1.15 2.08.22.77.26 1.58.11 2.37-.15.79-.48 1.54-.95 2.2-.47.66-1.08 1.22-1.79 1.61-.71.39-1.5.61-2.31.65-.81.04-1.62-.1-2.37-.42-.75-.32-1.42-.8-1.97-1.41s-.96-1.33-1.21-2.1c-.25-.77-.31-1.58-.19-2.38.12-.8.42-1.56.87-2.24.45-.68 1.05-1.26 1.75-1.7.7-.44 1.5-.73 2.32-.84.82-.11 1.65-.04 2.44.21.79.25 1.52.67 2.13 1.24.61.57 1.09 1.27 1.39 2.04.3.77.42 1.6.35 2.42-.07.82-.32 1.62-.74 2.34-.42.72-.99 1.35-1.67 1.84-.68.49-1.46.83-2.28.99-.82.16-1.66.13-2.47-.09-.81-.22-1.57-.62-2.22-1.16-.65-.54-1.18-1.21-1.55-1.96-.37-.75-.57-1.57-.59-2.41-.02-.84.14-1.68.47-2.46.33-.78.83-1.49 1.46-2.09.63-.6 1.39-1.07 2.22-1.38.83-.31 1.72-.45 2.61-.41.89.04 1.77.26 2.58.64.81.38 1.54.92 2.14 1.58.6.66 1.06 1.43 1.35 2.26.29.83.41 1.71.34 2.58-.07.87-.32 1.72-.74 2.5-.42.78-.99 1.47-1.68 2.03-.69.56-1.49.98-2.35 1.23-.86.25-1.76.32-2.65.22z"
-          />
-        </svg>
-      </a>
 
       {/* Toast Notification */}
       {showToast && (

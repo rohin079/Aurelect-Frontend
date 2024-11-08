@@ -1,7 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { motion, useScroll, useSpring } from "framer-motion";
+import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,35 +8,34 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
+import { motion, useScroll, useSpring } from "framer-motion";
 import {
   ArrowRight,
   BarChart,
-  DollarSign,
-  ShieldCheck,
-  BookOpen,
   Calculator,
-  Users,
   CheckCircle,
-  TrendingUp,
+  ChevronRight,
+  DollarSign,
   FileText,
-  Server,
-  Scale,
-  Layers,
-  Phone,
   Mail,
   MapPin,
-  ChevronRight,
+  Phone,
+  Server,
+  ShieldCheck,
+  TrendingUp,
+  Users
 } from "lucide-react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import {
-  LineChart,
+  CartesianGrid,
   Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
 } from "recharts";
 
 // Growth chart data
@@ -198,40 +195,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <ScrollProgress />
 
-      <header className="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center">
-              <img
-                src="/api/placeholder/40/40"
-                alt="Logo"
-                className="h-10 w-auto"
-              />
-              <h1 className="ml-3 text-xl font-semibold text-gray-900">
-                Aurelect Advisory
-              </h1>
-            </div>
-            <nav className="hidden md:block">
-              <ul className="flex space-x-8">
-                {["Home", "Services", "About", "Contact"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href={`/${item.toLowerCase()}`}
-                      className="text-gray-600 hover:text-gray-900 transition-colors relative group"
-                    >
-                      {item}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Get Started
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="flex-grow pt-16">
         <HeroSection />
@@ -567,9 +531,6 @@ interface StatProps {
 
 // Export all components
 export {
-  ScrollProgress,
-  AnimatedCounter,
-  HeroSection,
-  StatsSection,
-  GrowthChart,
+  AnimatedCounter, GrowthChart, HeroSection, ScrollProgress, StatsSection
 };
+
