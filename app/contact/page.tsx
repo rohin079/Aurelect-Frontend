@@ -372,7 +372,7 @@ const ContactFormSection = () => (
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your project..."
+                      placeholder="Tell us about your requirement..."
                       className="min-h-32 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
                       required
                     />

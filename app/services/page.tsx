@@ -612,19 +612,19 @@ interface TestimonialProps {
             quote="Their strategic financial guidance has been instrumental in our growth. The team's expertise in wealth management and investment strategy has helped us achieve exceptional returns."
             author="Robert Chen"
             position="Chief Executive Officer"
-            company="Global Innovations Inc."
+            company=""
           />
           <TestimonialCard
             quote="The personalized approach to financial planning and wealth management has made a significant difference. Our portfolio performance has exceeded expectations."
             author="Sarah Williams"
             position="Chief Financial Officer"
-            company="Tech Solutions Ltd."
+            company=""
           />
           <TestimonialCard
             quote="Outstanding service and expertise in investment management. Their team's dedication to our financial success has been evident in every interaction."
             author="Michael Thompson"
             position="Managing Director"
-            company="Thompson Enterprises"
+            company=""
           />
         </div>
       </div>
@@ -686,10 +686,11 @@ interface TestimonialProps {
               <div className="mt-12 pt-12 border-t border-white/20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                   {[
-                    { value: '25+', label: 'Years Experience' },
-                    { value: '10k+', label: 'Clients Served' },
-                    { value: '$5B+', label: 'Assets Managed' },
-                    { value: '98%', label: 'Client Satisfaction' }
+                   { value: '25+', label: 'Years of Expertise' },
+                   { value: '1st', label: 'Client Focus' },
+                   { value: '100%', label: 'Tailored Solutions' },
+                   { value: '98%', label: 'User Satisfaction' }
+                   
                   ].map((stat, index) => (
                     <div key={index} className="text-center">
                       <div className="text-2xl font-bold text-white">{stat.value}</div>
@@ -704,6 +705,7 @@ interface TestimonialProps {
       </div>
     </section>
   );
+  
 
   const Footer = () => (
     <footer className="relative bg-slate-900">

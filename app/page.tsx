@@ -27,7 +27,7 @@ import {
   ChevronDown,
   Laptop,
   Building,
-  Globe
+  Globe,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -97,7 +97,6 @@ const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-50 to-white overflow-hidden">
     {/* Background Elements */}
     <div className="absolute inset-0">
-      {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.15]"
         style={{
@@ -106,12 +105,8 @@ const HeroSection = () => (
           backgroundSize: "40px 40px",
         }}
       />
-
-      {/* Light decorative shapes */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-sky-100 rounded-full opacity-20 blur-3xl" />
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-blue-100 rounded-full opacity-20 blur-3xl" />
-
-      {/* Animated gradient accents */}
       {[...Array(3)].map((_, i) => (
         <div
           key={i}
@@ -139,14 +134,14 @@ const HeroSection = () => (
           Welcome to Financial Excellence
         </span>
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          Elevate Your{" "}
+          Unlock Your{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">
-            Financial Future
+            Finance Mastery
           </span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-slate-600">
-          Strategic wealth management and innovative financial solutions for
-          sustainable growth
+          Elevating financial futures with CFO-level expertise and innovative
+          strategies for sustainable, long-term growth.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
@@ -157,13 +152,16 @@ const HeroSection = () => (
             Schedule Consultation
             <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-2 border-sky-200 hover:bg-sky-50 text-sky-600 px-8 py-6 rounded-xl transition-all duration-300"
-          >
-            Learn More
-          </Button>
+
+          <Link href="/about">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-sky-200 hover:bg-sky-50 text-sky-600 px-8 py-6 rounded-xl transition-all duration-300"
+            >
+              Learn More
+            </Button>
+          </Link>
         </div>
 
         {/* Trust Indicators */}
@@ -174,9 +172,9 @@ const HeroSection = () => (
             </div>
             <div>
               <div className="font-semibold text-slate-900">
-                10,000+ Clients
+                25+ Years of Expertise
               </div>
-              <div className="text-slate-600">Trust our expertise</div>
+              <div className="text-slate-600">Guiding clients to success</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -185,9 +183,9 @@ const HeroSection = () => (
             </div>
             <div>
               <div className="font-semibold text-slate-900">
-                Enterprise-grade
+                Proven Strategies
               </div>
-              <div className="text-slate-600">Security & compliance</div>
+              <div className="text-slate-600">Tailored for growth and resilience</div>
             </div>
           </div>
         </div>
@@ -200,7 +198,6 @@ const HeroSection = () => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className="relative lg:flex-1 w-full lg:w-auto h-[400px] lg:h-[600px]"
       >
-        {/* Main Image */}
         <div className="relative">
           <div className="absolute -inset-2">
             <div className="w-full h-full rotate-2 bg-gradient-to-r from-sky-400 to-blue-500 opacity-30 blur-lg rounded-2xl"></div>
@@ -211,7 +208,6 @@ const HeroSection = () => (
               alt="Financial Dashboard"
               className="w-full h-full object-cover"
             />
-            {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-sky-900/20 to-transparent"></div>
           </div>
         </div>
@@ -229,9 +225,9 @@ const HeroSection = () => (
             </div>
             <div>
               <div className="font-semibold text-slate-900">
-                Portfolio Growth
+                Cost Saving Strategies
               </div>
-              <div className="text-green-600">+40% Annual Return</div>
+              <div className="text-green-600">Upto 40%</div>
             </div>
           </div>
         </motion.div>
@@ -247,15 +243,14 @@ const HeroSection = () => (
               <BarChart className="w-5 h-5 text-sky-600" />
             </div>
             <div>
-              <div className="font-semibold text-slate-900">Wealth Growth</div>
-              <div className="text-sky-600">30% Higher Returns</div>
+              <div className="font-semibold text-slate-900">Financial Optimization</div>
+              <div className="text-sky-600">Scalable Financial Services for Growth</div>
             </div>
           </div>
         </motion.div>
       </motion.div>
     </div>
 
-    {/* Scroll Indicator */}
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
@@ -266,6 +261,7 @@ const HeroSection = () => (
     </motion.div>
   </section>
 );
+
 
 const ValuePropositionSection = () => (
   <section className="relative py-24 bg-gradient-to-b from-white to-slate-50">
@@ -310,35 +306,35 @@ const ValuePropositionSection = () => (
         {[
           {
             icon: Users,
-            title: "Expert Advisory Team",
+            title: "Comprehensive & Cost-Effective Solutions",
             description:
-              "Our team of seasoned financial advisors brings decades of experience from leading global institutions.",
+              "Onshore and offshore bookkeeping for high-quality financial management and 30-50% cost savings. Our model helps you use resources strategically, boosting your bottom line.",
             features: [
-              "Certified Financial Planners",
+              "Experienced Team",
               "Industry Specialists",
-              "Dedicated Support",
+              "Cost-Effective Solutions",
             ],
           },
           {
             icon: ShieldCheck,
-            title: "Security-First Approach",
+            title: "Scalable, Flexible Financial Expertise",
             description:
-              "We prioritize the protection and preservation of your wealth while pursuing strategic growth opportunities.",
+              "Services tailored to grow with you, supporting local or international expansion. Dedicated accounting professionals ensure accuracy, compliance, and efficiency.",
             features: [
-              "Risk Management",
-              "Asset Protection",
-              "Compliance Excellence",
+              "Global Reach",
+              "Flexible Capacity",
+              "Accuracy & Compliance",
             ],
           },
           {
             icon: Laptop,
-            title: "Modern Solutions",
+            title: "CFO-Level Strategic Insights",
             description:
-              "Leveraging advanced financial technologies and methodologies to optimize your portfolio performance.",
+              "Our advisory services provide CFO-level guidance to refine your financial strategy, allowing internal teams to focus on core business growth and performance.",
             features: [
-              "Digital Integration",
-              "Real-time Analytics",
-              "Smart Portfolio Management",
+              "Strategic Insights",
+              "Enhanced Focus",
+              "Growth-Oriented",
             ],
           },
         ].map((item, index) => (
@@ -387,7 +383,7 @@ const ValuePropositionSection = () => (
       </div>
 
       {/* Additional Trust Indicators */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -409,7 +405,7 @@ const ValuePropositionSection = () => (
             </div>
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   </section>
 );
@@ -443,7 +439,7 @@ const ProcessSection = () => (
           Strategic Approach to Success
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          A methodical process designed to optimize your financial performance
+          A structured process to help you achieve sustainable financial success
         </p>
       </motion.div>
 
@@ -453,42 +449,44 @@ const ProcessSection = () => (
             number: "01",
             title: "Discovery",
             description:
-              "Comprehensive analysis of your financial position and goals",
+              "Understanding your unique financial landscape to identify opportunities and challenges",
             features: [
-              "Financial Assessment",
-              "Goal Setting",
-              "Risk Profiling",
+              "In-depth Assessment",
+              "Business Goal Alignment",
+              "Data Collection & Analysis",
             ],
           },
           {
             number: "02",
             title: "Strategy",
             description:
-              "Developing customized solutions aligned with your objectives",
+              "Formulating a customized financial strategy to drive sustainable growth",
             features: [
-              "Portfolio Planning",
-              "Asset Allocation",
+              "Goal-Oriented Planning",
               "Risk Management",
+              "Resource Allocation",
             ],
           },
           {
             number: "03",
             title: "Implementation",
-            description: "Executing strategies with precision and expertise",
+            description:
+              "Executing the strategy with precision to achieve financial objectives",
             features: [
-              "Portfolio Construction",
-              "Tax Optimization",
-              "Regular Monitoring",
+              "Action Plan Execution",
+              "Ongoing Monitoring",
+              "Stakeholder Communication",
             ],
           },
           {
             number: "04",
             title: "Optimization",
-            description: "Continuous refinement and adaptation of strategies",
+            description:
+              "Fine-tuning and improving processes for continuous success",
             features: [
-              "Performance Review",
-              "Strategy Adjustment",
-              "Regular Updates",
+              "Performance Analysis",
+              "Continuous Improvement",
+              "Scalable Solutions",
             ],
           },
         ].map((step, index) => (
@@ -805,12 +803,6 @@ const MetricsSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {[
           {
-            icon: Award,
-            metric: "Top 10",
-            label: "Financial Advisory Firm",
-            description: "Ranked by industry experts",
-          },
-          {
             icon: Users,
             metric: "24/7",
             label: "Client Support",
@@ -822,11 +814,18 @@ const MetricsSection = () => (
             label: "Response Time",
             description: "Quick service delivery",
           },
+
+          {
+            icon: Award,
+            metric: "99%",
+            label: "Client Satisfaction Rate",
+            description: " Happy clients",
+          },
           {
             icon: Shield,
             metric: "100%",
-            label: "Secure & Compliant",
-            description: "Enterprise-grade security",
+            label: " Data Security & IT Compliance",
+            description: "Secure data management",
           },
         ].map((item, index) => (
           <motion.div
@@ -903,67 +902,69 @@ const IndustrySection = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
           {
-            title: "Technology",
+            title: "Tax & Accounting Firms",
             description:
-              "Supporting fast-growing tech companies with scalable financial solutions",
+              "Tailored financial solutions for compliance, efficiency, and growth in tax and accounting.",
             icon: Laptop,
             features: [
-              "Growth Strategy",
-              "Capital Optimization",
-              "Tech Investment",
+              "Enhanced Compliance",
+              "Operational Efficiency",
+              "Strategic Growth",
             ],
           },
           {
-            title: "Healthcare",
+            title: "Retail & Franchises",
             description:
-              "Navigate complex regulations while optimizing financial performance",
+              "Expert financial strategies to optimize operations and profitability for retail growth.",
+            icon: Users,
+            features: [
+              "Profit Optimization",
+              "Operational Support",
+              "Growth Management",
+            ],
+          },
+          {
+            title: "Restaurants & Hospitality",
+            description:
+              "Customized guidance to streamline costs and boost profitability in hospitality.",
             icon: ShieldCheck,
             features: [
-              "Compliance Support",
-              "Risk Management",
-              "Growth Planning",
+              "Cost Efficiency",
+              "Profit Boosting",
+              "Sustainable Growth",
             ],
           },
           {
-            title: "Manufacturing",
-            description: "Streamline operations and maximize profit margins",
+            title: "Non-Profit Organizations",
+            description:
+              "Financial planning to manage funding, increase impact, and ensure sustainability.",
+            icon: MapPin,
+            features: [
+              "Funding Management",
+              "Impact Maximization",
+              "Financial Sustainability",
+            ],
+          },
+          {
+            title: "Property Management",
+            description:
+              "Efficient solutions for streamlined operations and profitability.",
+            icon: DollarSign,
+            features: [
+              "Operations Streamlining",
+              "Profit Ensuring",
+              "Strategic Support",
+            ],
+          },
+          {
+            title: "Manufacturing & Automotive",
+            description:
+              "Industry-focused strategies for cost optimization and sustainable growth.",
             icon: Building,
             features: [
               "Cost Optimization",
-              "Supply Chain Finance",
-              "Working Capital",
-            ],
-          },
-          {
-            title: "E-commerce",
-            description:
-              "Scale your online business with strategic financial planning",
-            icon: DollarSign,
-            features: [
-              "Cash Flow Management",
-              "Payment Solutions",
-              "Growth Finance",
-            ],
-          },
-          {
-            title: "Professional Services",
-            description: "Optimize cash flow and enhance service delivery",
-            icon: Users,
-            features: [
-              "Revenue Optimization",
-              "Cost Management",
-              "Growth Strategy",
-            ],
-          },
-          {
-            title: "Real Estate",
-            description:
-              "Maximize returns through strategic investment planning",
-            icon: MapPin,
-            features: [
-              "Investment Analysis",
-              "Portfolio Management",
-              "Risk Assessment",
+              "Cash Flow Improvement",
+              "Sustainable Growth",
             ],
           },
         ].map((industry, index) => (
@@ -1168,39 +1169,32 @@ const CTASection = () => (
             {/* Main Content */}
             <div className="text-center">
               <span className="text-sky-600 font-semibold mb-4 block">
-                Take the Next Step
+                Ready to Elevate Your Path?
               </span>
               <h2 className="text-4xl font-bold mb-4 text-slate-900">
-                Transform Your{" "}
+                Begin Your Journey to{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">
-                  Financial Future
+                  Lasting Success
                 </span>
               </h2>
               <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
-                Schedule a consultation with our expert financial advisors and
-                discover how we can help secure and grow your wealth.
+                Connect with our team to explore how tailored financial strategy can
+                help you achieve your most ambitious goals with precision and
+                confidence.
               </p>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              {/* Action Button */}
+              <div className="flex justify-center mb-12">
                 <Button
                   size="lg"
                   className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
-                  <span className="flex items-center">
-                    Schedule Consultation
-                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-sky-200 hover:bg-sky-50 text-sky-600 px-8 py-6 rounded-xl transition-all duration-300"
-                >
-                  <span className="flex items-center">
-                    Download Brochure
-                    <FileText className="ml-2 w-5 h-5" />
-                  </span>
+                  <Link href="/contact">
+                    <span className="flex items-center">
+                      Get Started with Us
+                      <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
                 </Button>
               </div>
 
@@ -1209,18 +1203,18 @@ const CTASection = () => (
                 {[
                   {
                     icon: ShieldCheck,
-                    title: "Enterprise Security",
-                    description: "Bank-grade protection",
+                    title: "Comprehensive Solutions",
+                    description: "Personalized plans tailored to you",
                   },
                   {
                     icon: Clock,
-                    title: "24/7 Support",
-                    description: "Always available",
+                    title: "Dedicated Support",
+                    description: "Here for you at every step",
                   },
                   {
                     icon: Users,
-                    title: "10,000+ Clients",
-                    description: "Trust our expertise",
+                    title: "Trusted by Thousands",
+                    description: "Guiding clients to achieve success",
                   },
                 ].map((item, index) => (
                   <div key={index} className="flex flex-col items-center">
@@ -1239,10 +1233,10 @@ const CTASection = () => (
               <div className="mt-8 pt-8 border-t border-slate-200">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {[
-                    "Personalized Strategy",
-                    "Tax Optimization",
-                    "Risk Management",
-                    "Regular Reviews",
+                    "Proven Methodology",
+                    "Goal-Oriented Insights",
+                    "Enhanced Security",
+                    "Continuous Evaluation",
                   ].map((benefit, index) => (
                     <div
                       key={index}
@@ -1264,8 +1258,8 @@ const CTASection = () => (
         <div className="relative mt-8 mx-8">
           <Card className="bg-gradient-to-r from-sky-600 to-blue-700 text-white p-6 text-center">
             <p className="text-lg font-medium">
-              Join thousands of satisfied clients who have secured their
-              financial future
+              Join the community of forward-thinkers who have transformed their
+              vision into reality with our expert guidance.
             </p>
           </Card>
         </div>
@@ -1273,6 +1267,7 @@ const CTASection = () => (
     </div>
   </section>
 );
+
 
 const ContactSection = () => (
   <section className="relative py-24 bg-gradient-to-b from-white to-slate-50">
@@ -1449,7 +1444,7 @@ const ContactSection = () => (
 const Footer = () => (
   <>
     {/* Pre-Footer Contact Section */}
-    <section className="relative bg-gradient-to-b from-white to-slate-50 py-12">
+    {/* <section className="relative bg-gradient-to-b from-white to-slate-50 py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Card className="hover:shadow-lg transition-all duration-300">
@@ -1497,7 +1492,7 @@ const Footer = () => (
           </Card>
         </div>
       </div>
-    </section>
+    </section> */}
 
     {/* Main Footer */}
     <footer className="bg-slate-900">
@@ -1679,13 +1674,13 @@ export default function Home() {
         <ValuePropositionSection />
         <IndustrySection />
         <ProcessSection />
-        <ExpertiseSection />
-        <InnovationSection />
-        <SolutionsSection />
+        {/* <ExpertiseSection /> */}
+        {/* <InnovationSection /> */}
+        {/* <SolutionsSection /> */}
         <MetricsSection />
         <CTASection />
 
-        <ContactSection />
+        {/* <ContactSection /> */}
       </main>
 
       <Footer />

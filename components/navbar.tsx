@@ -88,19 +88,19 @@ const Navbar = () => {
           <div className="flex items-center space-x-6 text-sm">
             <div className="flex items-center">
               <Phone className="w-4 h-4 text-sky-400 mr-2" />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 6357171102</span>
             </div>
             <span className="text-slate-400">|</span>
-            <span>Mon - Fri: 9:00 AM - 6:00 PM EST</span>
+            <span>Mon - Fri: 9:00 AM - 6:00 PM IST</span>
           </div>
           <div className="flex items-center space-x-4 text-sm">
-            <Link href="/client-portal" className="hover:text-sky-400 transition-colors">
+            {/* <Link href="/client-portal" className="hover:text-sky-400 transition-colors">
               Client Portal
             </Link>
             <span className="text-slate-400">|</span>
             <Link href="/careers" className="hover:text-sky-400 transition-colors">
               Careers
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
@@ -114,13 +114,13 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                FG
+                AA
               </div>
               <div>
                 <h1 className="text-xl font-bold text-slate-900">
-                  Financial Group
+                  Aurelect Advisory
                 </h1>
-                <p className="text-xs text-slate-600">Wealth Management</p>
+                <p className="text-xs text-slate-600">Financial Outsourcing</p>
               </div>
             </Link>
 
@@ -232,15 +232,17 @@ const Navbar = () => {
 
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
-              <Button
+              {/* <Button
                 variant="outline"
                 className="hidden lg:flex border-2 border-sky-200 text-sky-600 hover:bg-sky-50 px-6"
               >
                 Client Login
-              </Button>
-              <Button className="bg-sky-600 hover:bg-sky-700 px-6">
-                Get Started
-              </Button>
+              </Button> */}
+                <Link href="/contact">
+                  <Button className="bg-sky-600 hover:bg-sky-700 px-6">
+                    Get Started
+                  </Button>
+                </Link>
               <Button
                 variant="ghost"
                 size="icon"

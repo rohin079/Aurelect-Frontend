@@ -205,7 +205,7 @@ const CoreValuesSection = () => (
           Core Values & Vision
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Building trust through expertise, innovation, and unwavering commitment to our clients' success
+          Establishing new standards in financial services through innovation, expertise, and an unwavering commitment to client success
         </p>
       </motion.div>
 
@@ -229,18 +229,18 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                To be the trusted leader in financial advisory services, empowering clients to achieve their financial goals through innovative solutions and personalized expertise.
+                To emerge as a transformative force in financial advisory services, bringing fresh perspectives and innovative solutions to help clients navigate their financial journey.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Key Focus Areas</p>
                 <ul className="mt-3 space-y-2">
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Long-term wealth creation</span>
+                    <span>Modern financial solutions</span>
                   </li>
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Sustainable growth</span>
+                    <span>Client-centric growth</span>
                   </li>
                 </ul>
               </div>
@@ -267,22 +267,22 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                To deliver exceptional financial advisory services that empower our clients to make informed decisions and achieve their financial objectives.
+                To build lasting partnerships with our clients by providing transparent, innovative financial solutions that adapt to their evolving needs and aspirations.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Our Principles</p>
                 <ul className="mt-3 space-y-2">
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Client-first approach</span>
+                    <span>Transparent approach</span>
                   </li>
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Ethical practices</span>
+                    <span>Ethical foundation</span>
                   </li>
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Continuous innovation</span>
+                    <span>Forward thinking</span>
                   </li>
                 </ul>
               </div>
@@ -309,22 +309,22 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                25+ years of excellence in providing comprehensive financial solutions, serving over 10,000 satisfied clients worldwide.
+                Bringing together a team of dedicated professionals with diverse financial expertise and a passion for delivering innovative solutions.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Core Services</p>
                 <ul className="mt-3 space-y-2">
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Wealth Management</span>
+                    <span>Strategic Planning</span>
                   </li>
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Investment Strategy</span>
+                    <span>Financial Analysis</span>
                   </li>
                   <li className="flex items-center text-slate-600">
                     <CheckCircle className="h-5 w-5 text-sky-600 mr-2 flex-shrink-0" />
-                    <span>Financial Planning</span>
+                    <span>Growth Advisory</span>
                   </li>
                 </ul>
               </div>
@@ -339,38 +339,38 @@ const CoreValuesSection = () => (
 const ApproachSection = () => {
   const approaches = {
     holistic: {
-      title: "Holistic Wealth Management",
+      title: "Forward-Thinking Framework",
       description:
-        "We take a comprehensive view of your financial journey, integrating investment strategy with long-term wealth planning.",
+        "Our innovative approach integrates contemporary financial strategies with adaptable planning methods to build a strong foundation for your financial future.",
       features: [
-        "360° Financial Assessment",
-        "Risk-Balanced Portfolio Strategy",
-        "Tax-Efficient Planning",
-        "Estate & Succession Planning",
+        "Comprehensive Analysis",
+        "Future-Ready Strategy",
+        "Adaptive Planning",
+        "Growth-Focused Approach",
       ],
       icon: <Target className="w-12 h-12 text-sky-600" />,
     },
     tailored: {
-      title: "Personalized Solutions",
+      title: "Client-Focused Solutions",
       description:
-        "Every client's financial goals are unique. We develop customized strategies that align with your specific objectives and risk tolerance.",
+        "We believe in starting fresh with each client, creating customized strategies that reflect your unique aspirations and comfort level with various financial approaches.",
       features: [
-        "Custom Investment Portfolios",
-        "Retirement Planning",
-        "Wealth Preservation Strategies",
-        "Individual Goal Mapping",
+        "Personalized Strategy Design",
+        "Future Goal Planning",
+        "Flexible Solutions",
+        "Collaborative Approach",
       ],
       icon: <Settings className="w-12 h-12 text-sky-600" />,
     },
     innovative: {
-      title: "Modern Investment Approach",
+      title: "Technology-Driven Insights",
       description:
-        "Our advanced investment methodology combines traditional financial wisdom with cutting-edge technology to optimize your portfolio performance and provide real-time insights into your investments.",
+        "Leveraging the latest financial technology and analytical tools, we're building modern solutions that give you clear visibility and control over your financial journey.",
       features: [
-        "Data-Driven Analytics",
-        "Smart Portfolio Rebalancing",
-        "Digital Wealth Management",
-        "Real-time Performance Tracking",
+        "Robust Analytics",
+        "Dashboard Insights",
+        "Comprehensive Reporting",
+        "Real-Time Visibility",
       ],
       icon: <Lightbulb className="w-12 h-12 text-sky-600" />,
     },
@@ -403,12 +403,12 @@ const ApproachSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-sky-600 font-semibold mb-2 block">Our Methodology</span>
+          <span className="text-sky-600 font-semibold mb-2 block">Our Approach</span>
           <h2 className="text-4xl font-bold mb-4 text-slate-900">
-            A Strategic Approach to Financial Success
+            Building Tomorrow's Financial Solutions
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Discover how our comprehensive approach helps secure and grow your wealth
+            Explore how our innovative methodology aims to shape the future of financial services
           </p>
         </motion.div>
 
@@ -519,12 +519,12 @@ const AchievementsSection = () => (
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <span className="text-sky-600 font-semibold mb-2 block">Our Impact</span>
+        <span className="text-sky-600 font-semibold mb-2 block">Our Commitment</span>
         <h2 className="text-4xl font-bold mb-4 text-slate-900">
-          Proven Track Record
+          Driving Future Success
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Building lasting financial success through expertise and dedication
+          Setting new standards in financial services with innovation and dedication
         </p>
       </motion.div>
 
@@ -532,27 +532,27 @@ const AchievementsSection = () => (
         {[
           {
             icon: Users,
-            value: "10,000+",
-            label: "Satisfied Clients",
-            description: "Trust and reliability",
+            value: "100%",
+            label: "Client Focus",
+            description: "Dedicated support",
           },
           {
             icon: TrendingUp,
-            value: "$25B+",
-            label: "Assets Under Management",
-            description: "Growing portfolios",
+            value: "Reach out",
+            label: "Anytime",
+            description: "  24/7 availability",
           },
           {
             icon: Globe,
-            value: "15+",
-            label: "Global Presence",
-            description: "Countries served",
+            value: "Digital",
+            label: "Modern Platform",
+            description: "Tech-enabled service",
           },
           {
             icon: Award,
-            value: "25+",
-            label: "Years of Excellence",
-            description: "Industry experience",
+            value: "Expert",
+            label: "Advisory Team",
+            description: "Professional excellence",
           },
         ].map((stat, index) => (
           <motion.div
@@ -610,12 +610,12 @@ const JourneySection = () => (
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <span className="text-sky-600 font-semibold mb-2 block">Our History</span>
+        <span className="text-sky-600 font-semibold mb-2 block">Our Vision</span>
         <h2 className="text-4xl font-bold mb-4 text-slate-900">
-          Journey of Excellence
+          Path to Innovation
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Building trust and delivering value for over two decades
+          Charting a course for revolutionary financial services
         </p>
       </motion.div>
 
@@ -625,34 +625,34 @@ const JourneySection = () => (
 
         {[
           {
-            year: "1998",
-            title: "Foundation",
+            phase: "Phase 1",
+            title: "Foundation Building",
             description:
-              "Established with a vision to provide innovative wealth management solutions and personalized financial guidance.",
+              "Establishing our core services with a focus on innovative financial solutions and personalized client relationships.",
           },
           {
-            year: "2005",
-            title: "Market Leadership",
+            phase: "Phase 2",
+            title: "Service Excellence",
             description:
-              "Expanded our services to include comprehensive wealth management and retirement planning solutions.",
+              "Expanding our service offerings to provide comprehensive financial planning and wealth management solutions.",
           },
           {
-            year: "2012",
-            title: "Global Expansion",
+            phase: "Phase 3",
+            title: "Digital Integration",
             description:
-              "Extended our presence to major financial centers, serving clients across multiple continents.",
+              "Implementing cutting-edge financial technologies to enhance client experience and portfolio management capabilities.",
           },
           {
-            year: "2018",
-            title: "Digital Innovation",
+            phase: "Phase 4",
+            title: "Market Evolution",
             description:
-              "Integrated advanced financial technologies to provide real-time portfolio management and enhanced client experiences.",
+              "Developing advanced analytical tools and expanding our reach to serve diverse client needs across different markets.",
           },
           {
-            year: "2024",
-            title: "Future Forward",
+            phase: "Vision",
+            title: "Future Innovation",
             description:
-              "Leading the industry with AI-powered insights and sustainable investment strategies for the modern investor.",
+              "Leading the industry transformation with AI-driven insights and sustainable financial strategies for the next generation.",
           },
         ].map((milestone, index) => (
           <motion.div
@@ -670,7 +670,7 @@ const JourneySection = () => (
             }`}>
               <div className="space-y-3">
                 <span className="text-sky-600 font-bold text-xl">
-                  {milestone.year}
+                  {milestone.phase}
                 </span>
                 <h3 className="text-2xl font-bold text-slate-900">
                   {milestone.title}
