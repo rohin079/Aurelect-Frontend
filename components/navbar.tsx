@@ -88,7 +88,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-6 text-sm">
             <div className="flex items-center">
               <Phone className="w-4 h-4 text-sky-400 mr-2" />
-              <span>+91 6357171102</span>
+                <span>+91 6357171102</span>
+                <span className="mx-2">|</span>
+                <span>+1 (925) 913-0865</span>
             </div>
             <span className="text-slate-400">|</span>
             <span>Mon - Fri: 9:00 AM - 6:00 PM IST</span>

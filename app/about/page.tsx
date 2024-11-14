@@ -1,17 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import Footer from "@/components/footer";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Settings,
@@ -24,7 +16,7 @@ import {
   Layers,
   Target,
   ChartBar,
-  ShieldCheck
+  ShieldCheck,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 
@@ -43,7 +35,6 @@ const ScrollProgress = () => {
     />
   );
 };
-
 
 const HeroSection = () => (
   <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
@@ -69,7 +60,9 @@ const HeroSection = () => (
           key={i}
           className="absolute w-full h-96 opacity-10"
           style={{
-            background: `linear-gradient(${120 * i}deg, transparent, rgba(14, 165, 233, 0.15), transparent)`,
+            background: `linear-gradient(${
+              120 * i
+            }deg, transparent, rgba(14, 165, 233, 0.15), transparent)`,
             animation: `pulse ${8 + i * 2}s ease-in-out infinite alternate`,
           }}
         />
@@ -89,15 +82,16 @@ const HeroSection = () => (
             Welcome to Financial Group
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-            Secure Your{' '}
+            Secure Your{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">
               Financial Future
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">
-            Expert financial guidance and wealth management solutions tailored to help you achieve your financial goals.
+            Expert financial guidance and wealth management solutions tailored
+            to help you achieve your financial goals.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button className="px-8 py-4 bg-sky-600 text-white rounded-xl font-semibold hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl">
               Schedule Consultation
@@ -110,12 +104,14 @@ const HeroSection = () => (
           {/* Trust Indicators */}
           <div className="mt-12 grid grid-cols-3 gap-6 items-center text-center lg:text-left">
             {[
-              { value: '25+', label: 'Years Experience' },
-              { value: '$5B+', label: 'Assets Managed' },
-              { value: '10k+', label: 'Happy Clients' }
+              { value: "25+", label: "Years Experience" },
+              { value: "$5B+", label: "Assets Managed" },
+              { value: "10k+", label: "Happy Clients" },
             ].map((stat, index) => (
               <div key={index} className="space-y-1">
-                <div className="text-2xl font-bold text-slate-900">{stat.value}</div>
+                <div className="text-2xl font-bold text-slate-900">
+                  {stat.value}
+                </div>
                 <div className="text-sm text-slate-600">{stat.label}</div>
               </div>
             ))}
@@ -186,7 +182,7 @@ const CoreValuesSection = () => (
           backgroundSize: "40px 40px",
         }}
       />
-      
+
       {/* Light decorative shapes */}
       <div className="absolute top-0 left-0 -ml-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
       <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
@@ -200,12 +196,15 @@ const CoreValuesSection = () => (
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <span className="text-sky-600 font-semibold mb-2 block">Our Foundation</span>
+        <span className="text-sky-600 font-semibold mb-2 block">
+          Our Foundation
+        </span>
         <h2 className="text-4xl font-bold mb-4 text-slate-900">
           Core Values & Vision
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Establishing new standards in financial services through innovation, expertise, and an unwavering commitment to client success
+          Establishing new standards in financial services through innovation,
+          expertise, and an unwavering commitment to client success
         </p>
       </motion.div>
 
@@ -229,7 +228,9 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                To emerge as a transformative force in financial advisory services, bringing fresh perspectives and innovative solutions to help clients navigate their financial journey.
+                To emerge as a transformative force in financial advisory
+                services, bringing fresh perspectives and innovative solutions
+                to help clients navigate their financial journey.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Key Focus Areas</p>
@@ -267,7 +268,9 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                To build lasting partnerships with our clients by providing transparent, innovative financial solutions that adapt to their evolving needs and aspirations.
+                To build lasting partnerships with our clients by providing
+                transparent, innovative financial solutions that adapt to their
+                evolving needs and aspirations.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Our Principles</p>
@@ -309,7 +312,9 @@ const CoreValuesSection = () => (
             </CardHeader>
             <CardContent>
               <p className="text-slate-600">
-                Bringing together a team of dedicated professionals with diverse financial expertise and a passion for delivering innovative solutions.
+                Bringing together a team of dedicated professionals with diverse
+                financial expertise and a passion for delivering innovative
+                solutions.
               </p>
               <div className="mt-6 pt-6 border-t border-slate-100">
                 <p className="text-sky-600 font-medium">Core Services</p>
@@ -389,7 +394,7 @@ const ApproachSection = () => {
             backgroundSize: "40px 40px",
           }}
         />
-        
+
         {/* Light decorative shapes */}
         <div className="absolute top-0 right-0 -mr-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
         <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
@@ -403,12 +408,15 @@ const ApproachSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-sky-600 font-semibold mb-2 block">Our Approach</span>
+          <span className="text-sky-600 font-semibold mb-2 block">
+            Our Approach
+          </span>
           <h2 className="text-4xl font-bold mb-4 text-slate-900">
             Building Tomorrow's Financial Solutions
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Explore how our innovative methodology aims to shape the future of financial services
+            Explore how our innovative methodology aims to shape the future of
+            financial services
           </p>
         </motion.div>
 
@@ -464,7 +472,7 @@ const ApproachSection = () => {
                           </ul>
                         </div>
                       </div>
-                      
+
                       <div className="relative">
                         <div className="absolute -inset-2">
                           <div className="w-full h-full rotate-2 bg-gradient-to-r from-sky-400 to-blue-500 opacity-30 blur-lg rounded-2xl"></div>
@@ -505,7 +513,7 @@ const AchievementsSection = () => (
           backgroundSize: "40px 40px",
         }}
       />
-      
+
       {/* Light decorative shapes */}
       <div className="absolute top-0 left-0 -ml-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
       <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
@@ -519,12 +527,15 @@ const AchievementsSection = () => (
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <span className="text-sky-600 font-semibold mb-2 block">Our Commitment</span>
+        <span className="text-sky-600 font-semibold mb-2 block">
+          Our Commitment
+        </span>
         <h2 className="text-4xl font-bold mb-4 text-slate-900">
           Driving Future Success
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Setting new standards in financial services with innovation and dedication
+          Setting new standards in financial services with innovation and
+          dedication
         </p>
       </motion.div>
 
@@ -610,7 +621,9 @@ const JourneySection = () => (
         transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
-        <span className="text-sky-600 font-semibold mb-2 block">Our Vision</span>
+        <span className="text-sky-600 font-semibold mb-2 block">
+          Our Vision
+        </span>
         <h2 className="text-4xl font-bold mb-4 text-slate-900">
           Path to Innovation
         </h2>
@@ -665,9 +678,11 @@ const JourneySection = () => (
               index % 2 === 0 ? "flex-row" : "flex-row-reverse"
             }`}
           >
-            <div className={`w-1/2 ${index % 2 === 0 ? "pr-12" : "pl-12"} ${
-              index % 2 === 0 ? "text-right" : "text-left"
-            }`}>
+            <div
+              className={`w-1/2 ${index % 2 === 0 ? "pr-12" : "pl-12"} ${
+                index % 2 === 0 ? "text-right" : "text-left"
+              }`}
+            >
               <div className="space-y-3">
                 <span className="text-sky-600 font-bold text-xl">
                   {milestone.phase}
@@ -693,7 +708,6 @@ const JourneySection = () => (
   </section>
 );
 
-
 // Main Component Export
 export default function About() {
   const [isVisible, setIsVisible] = useState(false);
@@ -715,46 +729,7 @@ export default function About() {
         <JourneySection />
       </main>
 
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Aurelect Advisory
-              </h3>
-              <p className="text-gray-400">
-                Empowering businesses through comprehensive financial solutions.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
-              <ul className="space-y-4">
-                {["Home", "Services", "About", "Contact"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Contact Us</h3>
-              <p className="text-gray-400">contact@aurelectadvisory.com</p>
-              <p className="text-gray-400">+1 (555) 123-4567</p>
-            </div>
-          </div>
-          <div className="mt-12 border-t border-gray-800 pt-8 text-center">
-            <p className="text-gray-400">
-              © {new Date().getFullYear()} Aurelect Advisory. All rights
-              reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
