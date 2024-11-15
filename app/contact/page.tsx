@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import {  useState } from "react";
 import Footer from "@/components/footer";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,6 +13,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { sendEmail } from "../actions/sendEmail";
 import {
   Accordion,
   AccordionContent,
@@ -23,7 +22,6 @@ import {
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Toast } from "@/components/ui/toast";
 import {
   Mail,
   Phone,
@@ -267,47 +265,44 @@ interface EmailFormData extends Record<string, unknown> {
 }
 
 const ContactFormSection: React.FC = () => {
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [showSuccess, setShowSuccess] = useState<boolean>(false)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
-    const form = e.currentTarget;
+    const form = e.currentTarget
     const checkboxes = Array.from(
       form.querySelectorAll<HTMLInputElement>('input[name="services"]:checked')
-    );
+    )
 
-    const formData: EmailFormData = {
-      to_email: "rohinmehrotra@gmail.com",
-      from_name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      from_email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
-        .value,
-      selected_services: checkboxes.map((input) => input.value).join(", "),
-    };
+    const formData = {
+      from_name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      from_email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      selected_services: checkboxes.map((input) => input.value).join(', '),
+    }
 
     try {
-      await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        formData,
-        "YOUR_PUBLIC_KEY"
-      );
+      const result = await sendEmail(formData)
 
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      form.reset();
-
-      setTimeout(() => {
-        setShowSuccess(false);
-      }, 5000);
+      if (result.success) {
+        setShowSuccess(true)
+        form.reset()
+        
+        setTimeout(() => {
+          setShowSuccess(false)
+        }, 5000)
+      } else {
+        console.error('Failed to send email:', result.error)
+      }
     } catch (error) {
-      console.error("Error sending email:", error);
-      setIsSubmitting(false);
+      console.error('Error sending email:', error)
+    } finally {
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <section className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white">
@@ -907,11 +902,6 @@ const StatsSection = () => (
 
 // Main component export with updated structure and styling
 export default function Contact() {
-  useEffect(() => {
-    // Initialize EmailJS
-    emailjs.init("YOUR_PUBLIC_KEY");
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen">
       <ScrollProgress />
