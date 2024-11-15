@@ -1,6 +1,6 @@
 "use client";
 
-import {  useState } from "react";
+import { useState } from "react";
 import Footer from "@/components/footer";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Mail,
@@ -38,6 +37,8 @@ import {
   TrendingUp,
   Award,
   ChartBar,
+  XCircle,
+  X,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 
@@ -58,7 +59,7 @@ const ScrollProgress = () => {
 };
 
 const HeroSection = () => (
-  <section className="relative min-h-[80vh] flex items-center bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+  <section className="relative min-h-[60vh] flex items-center bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
     {/* Subtle geometric patterns */}
     <div className="absolute inset-0">
       <div
@@ -85,43 +86,53 @@ const HeroSection = () => (
           className="text-left"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            Strategic Financial
-            <span className="text-blue-600"> Solutions</span>
+            Let's Start a<span className="text-blue-600"> Conversation</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            Expert financial guidance and innovative solutions to help your
-            business achieve sustainable growth and success.
+            Have questions or need assistance? Our team of financial experts is
+            here to help. Reach out to us through any of our contact channels.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6"
-            >
-              Schedule Consultation
-              <ArrowRight className="ml-2" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-6"
-            >
-              Learn More
-            </Button>
+
+          {/* Contact Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-blue-50 rounded-lg">
+                  <Phone className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Call Us</h3>
+                  <p className="text-gray-600">+1 (925) 913-0865</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex items-center space-x-3">
+                <div className="p-2 bg-blue-50 rounded-lg">
+                  <Mail className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Email Us</h3>
+                  <p className="text-gray-600">Info@aurelect.com</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap gap-8">
+          <div className="flex flex-wrap gap-8">
             <div className="flex items-center">
-              <Shield className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="text-gray-600">Licensed & Regulated</span>
+              <Clock className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="text-gray-600">24/7 Support</span>
+            </div>
+            <div className="flex items-center">
+              <MessageSquare className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="text-gray-600">Quick Response</span>
             </div>
             <div className="flex items-center">
               <Users className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="text-gray-600">1000+ Clients</span>
-            </div>
-            <div className="flex items-center">
-              <Award className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="text-gray-600">Industry Leader</span>
+              <span className="text-gray-600">Expert Team</span>
             </div>
           </div>
         </motion.div>
@@ -132,29 +143,46 @@ const HeroSection = () => (
           transition={{ duration: 1, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="/images/background.jpg"
-              alt="Financial Services"
-              className="w-full h-full object-cover"
-            />
-            {/* Professional overlay cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur p-6 rounded-xl shadow-lg"
-            >
-              <div className="flex items-center gap-4">
-                <TrendingUp className="w-8 h-8 text-blue-600" />
-                <div>
-                  <h3 className="text-gray-900 font-semibold">Market Growth</h3>
-                  <p className="text-gray-600">
-                    Sustainable financial strategies
-                  </p>
+          <div className="relative">
+            {/* Decorative elements */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-sky-500 opacity-20 blur-2xl rounded-3xl" />
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl rounded-2xl" />
+
+            {/* Main image container */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/images/background.jpg"
+                alt="Customer Support Team"
+                className="w-full h-full object-cover"
+              />
+
+              {/* Floating accent cards */}
+              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-50 rounded-lg">
+                    <Building className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">
+                      Global Offices
+                    </p>
+                    <p className="text-sm text-gray-600">24/7 Available</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur p-4 rounded-xl shadow-lg">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-blue-50 rounded-lg">
+                    <Users className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900">Expert Team</p>
+                    <p className="text-sm text-gray-600">Ready to Help</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -255,57 +283,63 @@ const serviceOptions: ServiceOption[] = [
   },
 ];
 
-interface EmailFormData extends Record<string, unknown> {
-  to_email: string;
-  from_name: string;
-  from_email: string;
-  message: string;
-  selected_services: string;
-  [key: string]: unknown; // Index signature to satisfy EmailJS requirements
-}
-
 const ContactFormSection: React.FC = () => {
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
-  const [showSuccess, setShowSuccess] = useState<boolean>(false)
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [showSuccess, setShowSuccess] = useState<boolean>(false);
+  const [showError, setShowError] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
+    setShowError(false);
 
-    const form = e.currentTarget
+    const form = e.currentTarget;
     const checkboxes = Array.from(
       form.querySelectorAll<HTMLInputElement>('input[name="services"]:checked')
-    )
+    );
 
     const formData = {
-      from_name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      from_email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
-      selected_services: checkboxes.map((input) => input.value).join(', '),
-    }
-
+      from_name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      from_email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      from_phone: (form.elements.namedItem("phone") as HTMLInputElement).value, // Added phone
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+      selected_services: checkboxes.map((input) => input.value).join(", "),
+    };
     try {
-      const result = await sendEmail(formData)
+      const result = await sendEmail(formData);
 
       if (result.success) {
-        setShowSuccess(true)
-        form.reset()
-        
+        setShowSuccess(true);
+        form.reset();
+
         setTimeout(() => {
-          setShowSuccess(false)
-        }, 5000)
+          setShowSuccess(false);
+        }, 5000);
       } else {
-        console.error('Failed to send email:', result.error)
+        setErrorMessage("Failed to send email. Please try again later.");
+        setShowError(true);
+        setTimeout(() => {
+          setShowError(false);
+        }, 5000);
       }
     } catch (error) {
-      console.error('Error sending email:', error)
+      setErrorMessage("An unexpected error occurred. Please try again.");
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 5000);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section
+      id="contact-form-section"
+      className="relative py-24 bg-gradient-to-b from-white via-gray-50 to-white"
+    >
       <div className="absolute inset-0">
         <div
           className="absolute inset-0"
@@ -327,175 +361,204 @@ const ContactFormSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Tabs defaultValue="contact-form" className="w-full">
-            <TabsList className="grid w-full md:w-96 grid-cols-2 mx-auto mb-12 bg-gray-100/80 p-1 rounded-lg">
-              <TabsTrigger
-                value="contact-form"
-                className="data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm text-gray-600 rounded-md transition-all"
-              >
-                Contact Form
-              </TabsTrigger>
-              <TabsTrigger
-                value="contact-info"
-                className="data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm text-gray-600 rounded-md transition-all"
-              >
-                Contact Info
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent value="contact-form">
-              <Card className="bg-white shadow-lg border-0">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold text-gray-900">
-                    Get Started Today
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    Tell us about your project and we'll get back to you
-                    promptly.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="relative">
-                    <AnimatePresence>
-                      {showSuccess && (
+          <Card className="bg-white shadow-lg border-0">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-gray-900">
+                Get Started Today
+              </CardTitle>
+              <CardDescription className="text-gray-600">
+                Tell us about your project and we'll get back to you promptly.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="relative">
+                <AnimatePresence>
+                  {showSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50"
+                    >
+                      <div className="text-center p-8 rounded-lg">
                         <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50"
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ type: "spring", stiffness: 200 }}
                         >
-                          <div className="text-center p-8 rounded-lg">
-                            <motion.div
-                              initial={{ scale: 0 }}
-                              animate={{ scale: 1 }}
-                              transition={{ type: "spring", stiffness: 200 }}
-                            >
-                              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                            </motion.div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                              Thank You!
+                          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                        </motion.div>
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                          Thank You!
+                        </h3>
+                        <p className="text-gray-600">
+                          We'll get back to you soon.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {showError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      className="absolute top-0 left-0 right-0 flex items-center justify-center z-50"
+                    >
+                      <div className="bg-red-50 border border-red-200 rounded-lg shadow-lg p-4 w-full">
+                        <div className="flex items-center gap-3">
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: "spring", stiffness: 200 }}
+                            className="flex-shrink-0"
+                          >
+                            <XCircle className="h-6 w-6 text-red-500" />
+                          </motion.div>
+                          <div className="flex-1">
+                            <h3 className="text-sm font-medium text-red-800">
+                              Submission Failed
                             </h3>
-                            <p className="text-gray-600">
-                              We'll get back to you soon.
+                            <p className="text-sm text-red-700">
+                              {errorMessage}
                             </p>
                           </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name</Label>
-                          <Input
-                            id="name"
-                            name="name"
-                            placeholder="John Doe"
-                            className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email Address</Label>
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder="john@example.com"
-                            className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="services">Services Required</Label>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {serviceOptions.map((option) => (
-                            <div
-                              key={option.value}
-                              className="flex items-start space-x-3 p-4 rounded-lg border border-gray-200 hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-pointer"
-                            >
-                              <Checkbox
-                                id={option.value}
-                                name="services"
-                                value={option.value}
-                                className="mt-1 text-blue-600 border-gray-300 focus:ring-blue-500"
-                              />
-                              <div>
-                                <label
-                                  htmlFor={option.value}
-                                  className="block text-md font-semibold text-gray-900 mb-1"
-                                >
-                                  {option.label}
-                                </label>
-                                <p className="text-sm text-gray-600">
-                                  {option.description}
-                                </p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Your Message</Label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          placeholder="Tell us about your requirement..."
-                          className="min-h-32 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
-                          required
-                        />
-                      </div>
-
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full flex items-center justify-center h-12 bg-blue-600 hover:bg-blue-700 text-white transition-colors group rounded-md disabled:opacity-70"
-                      >
-                        {isSubmitting ? (
-                          <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{
-                              duration: 1,
-                              repeat: Infinity,
-                              ease: "linear",
-                            }}
+                          <button
+                            onClick={() => setShowError(false)}
+                            className="flex-shrink-0 p-1.5 rounded-lg hover:bg-red-100 transition-colors"
                           >
-                            <Send className="w-5 h-5" />
-                          </motion.div>
-                        ) : (
-                          <>
-                            Send Message
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                          </>
-                        )}
-                      </button>
-
-                      {/* Trust Indicators */}
-                      <div className="pt-6 mt-6 border-t border-gray-100">
-                        <div className="flex flex-wrap justify-center gap-6">
-                          <div className="flex items-center text-gray-600">
-                            <Shield className="w-5 h-5 text-blue-600 mr-2" />
-                            <span>Secure Form</span>
-                          </div>
-                          <div className="flex items-center text-gray-600">
-                            <Clock className="w-5 h-5 text-blue-600 mr-2" />
-                            <span>24h Response Time</span>
-                          </div>
-                          <div className="flex items-center text-gray-600">
-                            <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
-                            <span>Certified Advisors</span>
-                          </div>
+                            <X className="h-4 w-4 text-red-500" />
+                          </button>
                         </div>
                       </div>
-                    </form>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="John Doe"
+                        className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="john@example.com"
+                        className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="+1 (123) 456-7890"
+                        className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                        pattern="[0-9+\s()-]*"
+                        title="Please enter a valid phone number"
+                        required
+                      />
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="services">Services Required</Label>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {serviceOptions.map((option) => (
+                        <div
+                          key={option.value}
+                          className="flex items-start space-x-3 p-4 rounded-lg border border-gray-200 hover:border-blue-200 hover:bg-blue-50/50 transition-colors cursor-pointer"
+                        >
+                          <Checkbox
+                            id={option.value}
+                            name="services"
+                            value={option.value}
+                            className="mt-1 text-blue-600 border-gray-300 focus:ring-blue-500"
+                          />
+                          <div>
+                            <label
+                              htmlFor={option.value}
+                              className="block text-md font-semibold text-gray-900 mb-1"
+                            >
+                              {option.label}
+                            </label>
+                            <p className="text-sm text-gray-600">
+                              {option.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Your Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us about your requirement..."
+                      className="min-h-32 border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center h-12 bg-blue-600 hover:bg-blue-700 text-white transition-colors group rounded-md disabled:opacity-70"
+                  >
+                    {isSubmitting ? (
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{
+                          duration: 1,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
+                      >
+                        <Send className="w-5 h-5" />
+                      </motion.div>
+                    ) : (
+                      <>
+                        Send Message
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </>
+                    )}
+                  </button>
+
+                  {/* Trust Indicators */}
+                  <div className="pt-6 mt-6 border-t border-gray-100">
+                    <div className="flex flex-wrap justify-center gap-6">
+                      <div className="flex items-center text-gray-600">
+                        <Shield className="w-5 h-5 text-blue-600 mr-2" />
+                        <span>Secure Form</span>
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <Clock className="w-5 h-5 text-blue-600 mr-2" />
+                        <span>24h Response Time</span>
+                      </div>
+                      <div className="flex items-center text-gray-600">
+                        <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
+                        <span>Certified Advisors</span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </section>
@@ -582,7 +645,17 @@ const FAQSection = () => (
               Our financial experts are here to help you make informed decisions
               about your financial future.
             </p>
-            <button className="w-full py-3 px-4 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium">
+            <button
+              onClick={() => {
+                const contactFormSection = document.getElementById(
+                  "contact-form-section"
+                );
+                if (contactFormSection) {
+                  contactFormSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="w-full py-3 px-4 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium"
+            >
               Schedule a Consultation
             </button>
           </div>
@@ -770,7 +843,17 @@ const LocationSection = () => (
                 Meet with our financial experts to discuss your investment
                 strategy
               </p>
-              <button className="w-full py-3 px-4 bg-white text-sky-600 rounded-lg hover:bg-sky-50 transition-colors font-medium">
+              <button
+                onClick={() => {
+                  const contactFormSection = document.getElementById(
+                    "contact-form-section"
+                  );
+                  if (contactFormSection) {
+                    contactFormSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="w-full py-3 px-4 bg-white text-sky-600 rounded-lg hover:bg-sky-50 transition-colors font-medium"
+              >
                 Book an Appointment
               </button>
             </CardContent>
@@ -903,7 +986,7 @@ const StatsSection = () => (
 // Main component export with updated structure and styling
 export default function Contact() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <ScrollProgress />
       <Navbar />
 
@@ -918,3 +1001,10 @@ export default function Contact() {
     </div>
   );
 }
+
+const scrollToContactForm = () => {
+  const contactFormSection = document.getElementById("contact-form-section");
+  if (contactFormSection) {
+    contactFormSection.scrollIntoView({ behavior: "smooth" });
+  }
+};

@@ -6,6 +6,7 @@ import nodemailer from 'nodemailer'
 interface EmailData {
   from_name: string
   from_email: string
+  from_phone: string  // Added phone field
   message: string
   selected_services: string
 }
@@ -30,6 +31,7 @@ export async function sendEmail(data: EmailData) {
         <h1>New Contact Form Submission</h1>
         <p><strong>Name:</strong> ${data.from_name}</p>
         <p><strong>Email:</strong> ${data.from_email}</p>
+        <p><strong>Phone:</strong> ${data.from_phone}</p>
         <p><strong>Selected Services:</strong> ${data.selected_services}</p>
         <p><strong>Message:</strong></p>
         <p>${data.message}</p>
@@ -42,4 +44,4 @@ export async function sendEmail(data: EmailData) {
     console.error('Error sending email:', error)
     return { success: false, error: 'Failed to send email' }
   }
-} 
+}
