@@ -205,6 +205,19 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link 
+                    href="/industries" 
+                    className={`flex items-center transition-colors py-2 relative group ${
+                      isActive('/industries') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
+                    }`}
+                  >
+                    Industries
+                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                      isActive('/industries') ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
+                  </Link>
+                </li>
+                <li>
+                  <Link 
                     href="/about" 
                     className={`flex items-center transition-colors py-2 relative group ${
                       isActive('/about') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'

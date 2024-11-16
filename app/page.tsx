@@ -526,242 +526,7 @@ const ProcessSection = () => (
   </section>
 );
 
-//   <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white">
-//     {/* Background Elements */}
-//     <div className="absolute inset-0">
-//       <div
-//         className="absolute inset-0 opacity-[0.15]"
-//         style={{
-//           backgroundImage:
-//             "radial-gradient(circle at 1px 1px, rgb(148, 163, 184) 1px, transparent 0)",
-//           backgroundSize: "40px 40px",
-//         }}
-//       />
 
-//       {/* Light decorative shapes */}
-//       <div className="absolute top-0 left-0 -ml-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
-//       <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
-//     </div>
-
-//     <div className="relative max-w-7xl mx-auto px-4">
-//       <motion.div
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.8 }}
-//         className="text-center mb-16"
-//       >
-//         <span className="text-sky-600 font-semibold mb-2 block">
-//           Core Expertise
-//         </span>
-//         <h2 className="text-4xl font-bold mb-4 text-slate-900">
-//           Comprehensive Financial Solutions
-//         </h2>
-//         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-//           Leveraging advanced strategies and technology for optimal financial
-//           outcomes
-//         </p>
-//       </motion.div>
-
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//         {[
-//           {
-//             icon: Shield,
-//             title: "Wealth Protection",
-//             description:
-//               "Advanced risk management and wealth preservation strategies",
-//             features: [
-//               "Asset Protection",
-//               "Risk Management",
-//               "Insurance Solutions",
-//               "Estate Planning",
-//             ],
-//           },
-//           {
-//             icon: ChartBar,
-//             title: "Investment Excellence",
-//             description:
-//               "Data-driven investment strategies and portfolio optimization",
-//             features: [
-//               "Portfolio Management",
-//               "Market Analysis",
-//               "Investment Strategy",
-//               "Performance Tracking",
-//             ],
-//           },
-//           {
-//             icon: MonitorSmartphone,
-//             title: "Digital Innovation",
-//             description:
-//               "Modern financial technology integration for enhanced results",
-//             features: [
-//               "Digital Platform",
-//               "Real-time Monitoring",
-//               "Automated Solutions",
-//               "Secure Access",
-//             ],
-//           },
-//         ].map((item, index) => (
-//           <motion.div
-//             key={index}
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ duration: 0.8, delay: index * 0.2 }}
-//           >
-//             <Card className="bg-white hover:shadow-xl transition-all duration-300 group relative overflow-hidden h-full">
-//               <div className="absolute inset-0 bg-gradient-to-r from-sky-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-//               <CardContent className="p-8 relative">
-//                 <div className="mb-6">
-//                   <div className="w-16 h-16 bg-sky-100 rounded-2xl flex items-center justify-center">
-//                     <item.icon className="w-8 h-8 text-sky-600" />
-//                   </div>
-//                 </div>
-
-//                 <h3 className="text-xl font-bold text-slate-900 mb-3">
-//                   {item.title}
-//                 </h3>
-//                 <p className="text-slate-600 mb-6">{item.description}</p>
-
-//                 <ul className="space-y-3 mt-6 pt-6 border-t border-slate-100">
-//                   {item.features.map((feature, idx) => (
-//                     <li key={idx} className="flex items-center text-slate-700">
-//                       <div className="w-5 h-5 rounded-full bg-sky-100 flex items-center justify-center mr-3 flex-shrink-0">
-//                         <CheckCircle className="w-3 h-3 text-sky-600" />
-//                       </div>
-//                       {feature}
-//                     </li>
-//                   ))}
-//                 </ul>
-
-//                 {/* Decorative Elements */}
-//                 <div className="absolute top-0 right-0 w-24 h-24 bg-sky-100 rounded-full -mr-12 -mt-12 opacity-20" />
-//                 <div className="absolute bottom-0 left-0 w-16 h-16 bg-sky-100 rounded-full -ml-8 -mb-8 opacity-20" />
-//               </CardContent>
-//             </Card>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </div>
-//   </section>
-// );
-
-// const InnovationSection = () => (
-//   <section className="relative py-24 bg-gradient-to-b from-white to-slate-50">
-//     {/* Background Elements */}
-//     <div className="absolute inset-0">
-//       <div
-//         className="absolute inset-0 opacity-[0.15]"
-//         style={{
-//           backgroundImage:
-//             "radial-gradient(circle at 1px 1px, rgb(148, 163, 184) 1px, transparent 0)",
-//           backgroundSize: "40px 40px",
-//         }}
-//       />
-
-//       {/* Light decorative shapes */}
-//       <div className="absolute top-0 left-0 -ml-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
-//       <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
-//     </div>
-
-//     <div className="relative max-w-7xl mx-auto px-4">
-//       <motion.div
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.8 }}
-//         className="text-center mb-16"
-//       >
-//         <span className="text-sky-600 font-semibold mb-2 block">
-//           Innovation Hub
-//         </span>
-//         <h2 className="text-4xl font-bold mb-4 text-slate-900">
-//           Advanced Financial Technology
-//         </h2>
-//         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-//           Leveraging cutting-edge solutions for superior financial performance
-//         </p>
-//       </motion.div>
-
-//       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-//         {[
-//           {
-//             icon: ChartBar,
-//             title: "AI-Powered Analytics",
-//             description: "Real-time insights and predictive analysis",
-//             features: [
-//               "Market Prediction",
-//               "Risk Assessment",
-//               "Portfolio Optimization",
-//             ],
-//           },
-//           {
-//             icon: Shield,
-//             title: "Advanced Security",
-//             description: "Enterprise-grade protection for your assets",
-//             features: ["Encryption", "Fraud Prevention", "Secure Access"],
-//           },
-//           {
-//             icon: Target,
-//             title: "Smart Planning",
-//             description: "Data-driven financial strategy development",
-//             features: [
-//               "Goal Mapping",
-//               "Scenario Analysis",
-//               "Strategic Planning",
-//             ],
-//           },
-//           {
-//             icon: Laptop,
-//             title: "Digital Platform",
-//             description: "Seamless technology integration",
-//             features: [
-//               "Real-time Dashboard",
-//               "Mobile Access",
-//               "Automated Reports",
-//             ],
-//           },
-//         ].map((item, index) => (
-//           <motion.div
-//             key={index}
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             transition={{ duration: 0.8, delay: index * 0.2 }}
-//           >
-//             <Card className="bg-white hover:shadow-xl transition-all duration-300 group relative h-full">
-//               <div className="absolute inset-0 bg-gradient-to-r from-sky-600/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg" />
-//               <CardContent className="p-6 relative">
-//                 <div className="w-14 h-14 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
-//                   <item.icon className="w-7 h-7 text-sky-600" />
-//                 </div>
-
-//                 <h3 className="text-lg font-bold text-slate-900 mb-2">
-//                   {item.title}
-//                 </h3>
-//                 <p className="text-slate-600 mb-4">{item.description}</p>
-
-//                 <ul className="space-y-2">
-//                   {item.features.map((feature, idx) => (
-//                     <li
-//                       key={idx}
-//                       className="flex items-center text-slate-700 text-sm"
-//                     >
-//                       <div className="w-4 h-4 rounded-full bg-sky-100 flex items-center justify-center mr-2 flex-shrink-0">
-//                         <div className="w-1.5 h-1.5 rounded-full bg-sky-600" />
-//                       </div>
-//                       {feature}
-//                     </li>
-//                   ))}
-//                 </ul>
-//               </CardContent>
-//             </Card>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </div>
-//   </section>
-// );
 const MetricsSection = () => (
   <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white">
     {/* Background Elements */}
@@ -1614,9 +1379,183 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <ValuePropositionSection />
-        <IndustrySection />
+        {/* <IndustrySection /> */}
         <ProcessSection />
         <MetricsSection />
+        <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white">
+          <div className="absolute inset-0">
+            <div
+              className="absolute inset-0 opacity-[0.15]"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, rgb(148, 163, 184) 1px, transparent 0)",
+                backgroundSize: "40px 40px",
+              }}
+            />
+            
+            {/* Light decorative shapes */}
+            <div className="absolute top-0 left-0 -ml-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
+            <div className="absolute bottom-0 right-0 -mr-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <span className="text-sky-600 font-semibold mb-2 block">
+                Technology Softwares
+              </span>
+              <h2 className="text-4xl font-bold mb-4 text-slate-900">
+                Powered by Industry-Leading Software
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                We leverage the most advanced and reliable accounting and financial software solutions to deliver exceptional results
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              {[
+                { 
+                  name: "QuickBooks",
+                  category: "Accounting",
+                  logo: "/logos/qb.png"
+                },
+                
+                { 
+                  name: "Intuite Lacerte",
+                  category: "Tax Software",
+                  logo: "/logos/65ce3eaec7c1bc648fe5cbdc_Intuit-Lacerte.png"
+                },
+                
+
+                { 
+                  name: "Xero",
+                  category: "Accounting",
+                  logo: "/logos/xero.jpg"
+                },
+                { 
+                  name: "Sage",
+                  category: "Business Management",
+                  logo: "/logos/sage.png"
+                },
+                { 
+                  name: "Oracle",
+                  category: "ERP",
+                  logo: "/logos/oracle.png"
+                },
+                { 
+                  name: "BlackLine",
+                  category: "Financial Close",
+                  logo: "/logos/BlackLine-logo.png"
+                },
+                { 
+                  name: "Dropbox",
+                  category: "File Storage",
+                  logo: "/logos/Dropbox-Logo.png"
+                },
+                { 
+                  name: "Google Drive",
+                  category: "Cloud Storage",
+                  logo: "/logos/Google_Drive_-_New_Logo.png"
+                },
+                { 
+                  name: "Microsoft Power BI",
+                  category: "Business Intelligence",
+                  logo: "/logos/Microsoft-Power-BI-Symbol.png"
+                },
+                { 
+                  name: "OneDrive",
+                  category: "Cloud Storage",
+                  logo: "/logos/OneDrive-Symbol.png"
+                },
+                { 
+                  name: "Power Automate",
+                  category: "Process Automation",
+                  logo: "/logos/power automate.png"
+                },
+                { 
+                  name: "ProConnect",
+                  category: "Tax Software",
+                  logo: "/logos/proconnect.png"
+                },
+                { 
+                  name: "SAP",
+                  category: "ERP",
+                  logo: "/logos/sap.png"
+                },
+                { 
+                  name: "SharePoint",
+                  category: "Document Management",
+                  logo: "/logos/SharePoint-Symbol.png"
+                },
+                { 
+                  name: "SmartVault",
+                  category: "Document Management",
+                  logo: "/logos/smartvault-logo.png"
+                },
+                { 
+                  name: "SurePrep",
+                  category: "Tax Preparation",
+                  logo: "/logos/sure prep.png"
+                },
+                { 
+                  name: "Tally",
+                  category: "Accounting",
+                  logo: "/logos/tally.png"
+                },
+                { 
+                  name: "TaxDome",
+                  category: "Tax Management",
+                  logo: "/logos/TaxDome_Logo_2.png"
+                },
+                { 
+                  name: "UltraTax",
+                  category: "Tax Software",
+                  logo: "/logos/UltraTax.png"
+                }
+              ].map((software, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                >
+                  <Card className="hover:shadow-lg transition-all duration-300 h-full">
+                    <CardContent className="p-6">
+                      <div className="flex flex-col items-center space-y-4">
+                        <div className="relative w-full h-16 flex items-center justify-center">
+                          <Image
+                            src={software.logo}
+                            alt={`${software.name} logo`}
+                            width={120}
+                            height={48}
+                            className="object-contain max-h-16"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <p className="text-xs text-sky-600 font-medium">
+                            {software.category}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center mt-12">
+              <p className="text-slate-600">
+                And many more industry-specific solutions tailored to your needs
+              </p>
+            </div>
+          </div>
+        </section>
         <CTASection />
       </main>
 
