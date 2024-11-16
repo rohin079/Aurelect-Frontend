@@ -137,13 +137,15 @@ const HeroSection = () => (
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button
-            size="lg"
-            className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-          >
-            Schedule Consultation
-            <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-          </Button>
+            <Link href="/contact">
+            <Button
+              size="lg"
+              className="bg-sky-600 hover:bg-sky-700 text-white px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              Schedule Consultation
+              <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+            </Button>
+            </Link>
 
           <Link href="/about">
             <Button

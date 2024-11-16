@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Aurelect Advisory",
+  title: "Aurelect Advisors",
   description: "Financial advisory services for businesses and individuals",
 };
 

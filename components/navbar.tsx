@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { 
-  Phone, 
+import {
+  Phone,
   ChevronDown,
   Menu,
   BarChart,
@@ -20,7 +20,7 @@ import {
   Globe,
   TrendingUp,
   Cpu,
-  LucideIcon
+  LucideIcon,
 } from "lucide-react";
 
 interface ServiceItem {
@@ -44,37 +44,81 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const services: ServiceCategory[] = [
     {
       category: "Core Financial Services",
       items: [
-        { label: "CFO Services", icon: BarChart, description: "Comprehensive financial management" },
-        { label: "Financial Controller", icon: Calculator, description: "Expert financial control" },
-        { label: "Bookkeeping", icon: FileText, description: "Accurate record keeping" },
-        { label: "Accounting", icon: PieChart, description: "Professional accounting services" },
-        { label: "Payroll Processing", icon: CreditCard, description: "Efficient payroll management" },
-        { label: "Tax Support", icon: ClipboardList, description: "Tax planning & compliance" }
-      ]
+        {
+          label: "CFO Services",
+          icon: BarChart,
+          description: "Comprehensive financial management",
+        },
+        {
+          label: "Financial Controller",
+          icon: Calculator,
+          description: "Expert financial control",
+        },
+        {
+          label: "Bookkeeping",
+          icon: FileText,
+          description: "Accurate record keeping",
+        },
+        {
+          label: "Accounting",
+          icon: PieChart,
+          description: "Professional accounting services",
+        },
+        {
+          label: "Payroll Processing",
+          icon: CreditCard,
+          description: "Efficient payroll management",
+        },
+        {
+          label: "Tax Support",
+          icon: ClipboardList,
+          description: "Tax planning & compliance",
+        },
+      ],
     },
     {
       category: "Specialized Services",
       items: [
-        { label: "Automation", icon: Zap, description: "Financial process automation" },
-        { label: "Board Meeting", icon: Briefcase, description: "Strategic meeting support" },
-        { label: "Training", icon: GraduationCap, description: "Financial education" },
-        { label: "Global Business", icon: Globe, description: "International solutions" },
-        { label: "Transformation", icon: TrendingUp, description: "Business modernization" },
-        { label: "Fintech", icon: Cpu, description: "Technology integration" }
-      ]
-    }
+        {
+          label: "Automation",
+          icon: Zap,
+          description: "Financial process automation",
+        },
+        {
+          label: "Board Meeting",
+          icon: Briefcase,
+          description: "Strategic meeting support",
+        },
+        {
+          label: "Training",
+          icon: GraduationCap,
+          description: "Financial education",
+        },
+        {
+          label: "Global Business",
+          icon: Globe,
+          description: "International solutions",
+        },
+        {
+          label: "Transformation",
+          icon: TrendingUp,
+          description: "Business modernization",
+        },
+        { label: "Fintech", icon: Cpu, description: "Technology integration" },
+      ],
+    },
   ];
 
   const isActive = (path: string): boolean => {
-    if (path === '/') {
+    if (path === "/") {
       return pathname === path;
     }
     return pathname?.startsWith(path);
@@ -88,9 +132,9 @@ const Navbar = () => {
           <div className="flex items-center space-x-6 text-sm">
             <div className="flex items-center">
               <Phone className="w-4 h-4 text-sky-400 mr-2" />
-                <span>+91 6357171102</span>
-                <span className="mx-2">|</span>
-                <span>++1 (925) 913-0865</span>
+              <span>+91 6357171102</span>
+              <span className="mx-2">|</span>
+              <span>++1 (925) 913-0865</span>
             </div>
             <span className="text-slate-400">|</span>
             <span>Mon - Fri: 9:00 AM - 6:00 PM IST</span>
@@ -108,9 +152,11 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <header className={`sticky top-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white'
-      }`}>
+      <header
+        className={`sticky top-0 w-full z-40 transition-all duration-300 ${
+          isScrolled ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
@@ -120,7 +166,7 @@ const Navbar = () => {
               </div>
               <div>
                 <h1 className="text-xl font-bold text-slate-900">
-                  Aurelect Advisory
+                  Aurelect Advisors
                 </h1>
                 <p className="text-xs text-slate-600">Financial Outsourcing</p>
               </div>
@@ -130,20 +176,41 @@ const Navbar = () => {
             <nav className="hidden lg:block">
               <ul className="flex items-center space-x-8">
                 <li>
-                  <Link 
-                    href="/" 
+                  <Link
+                    href="/"
                     className={`flex items-center transition-colors py-2 relative group ${
-                      isActive('/') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
+                      isActive("/")
+                        ? "text-sky-600"
+                        : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     Home
-                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
-                      isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                        isActive("/") ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/about"
+                    className={`flex items-center transition-colors py-2 relative group ${
+                      isActive("/about")
+                        ? "text-sky-600"
+                        : "text-slate-600 hover:text-sky-600"
+                    }`}
+                  >
+                    About
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                        isActive("/about") ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
                 </li>
                 <li className="relative group">
-                  <Link 
+                  <Link
                     href="/services"
                     onClick={(e) => {
                       // Prevent the click if the dropdown is being opened
@@ -153,20 +220,28 @@ const Navbar = () => {
                     }}
                     onMouseEnter={() => setIsServicesOpen(true)}
                     className={`flex items-center transition-colors py-2 relative group ${
-                      isActive('/services') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
+                      isActive("/services")
+                        ? "text-sky-600"
+                        : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     Services
                     <ChevronDown className="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform" />
-                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
-                      isActive('/services') ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                        isActive("/services")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
 
                   {/* Services Dropdown */}
                   <div
                     className={`absolute top-full -left-4 w-[600px] bg-white rounded-xl shadow-xl border border-slate-200 transition-all duration-300 ${
-                      isServicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
+                      isServicesOpen
+                        ? "opacity-100 visible translate-y-0"
+                        : "opacity-0 invisible translate-y-2"
                     }`}
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
@@ -204,42 +279,42 @@ const Navbar = () => {
                   </div>
                 </li>
                 <li>
-                  <Link 
-                    href="/industries" 
+                  <Link
+                    href="/industries"
                     className={`flex items-center transition-colors py-2 relative group ${
-                      isActive('/industries') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
+                      isActive("/industries")
+                        ? "text-sky-600"
+                        : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     Industries
-                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
-                      isActive('/industries') ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                        isActive("/industries")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
                 </li>
+
                 <li>
-                  <Link 
-                    href="/about" 
+                  <Link
+                    href="/contact"
                     className={`flex items-center transition-colors py-2 relative group ${
-                      isActive('/about') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
-                    }`}
-                  >
-                    About
-                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
-                      isActive('/about') ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    href="/contact" 
-                    className={`flex items-center transition-colors py-2 relative group ${
-                      isActive('/contact') ? 'text-sky-600' : 'text-slate-600 hover:text-sky-600'
+                      isActive("/contact")
+                        ? "text-sky-600"
+                        : "text-slate-600 hover:text-sky-600"
                     }`}
                   >
                     Contact
-                    <span className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
-                      isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'
-                    }`} />
+                    <span
+                      className={`absolute -bottom-0.5 left-0 h-0.5 bg-sky-600 transition-all ${
+                        isActive("/contact")
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
                 </li>
               </ul>
@@ -253,16 +328,12 @@ const Navbar = () => {
               >
                 Client Login
               </Button> */}
-                <Link href="/contact">
-                  <Button className="bg-sky-600 hover:bg-sky-700 px-6">
-                    Get Started
-                  </Button>
-                </Link>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden"
-              >
+              <Link href="/contact">
+                <Button className="bg-sky-600 hover:bg-sky-700 px-6">
+                  Get Started
+                </Button>
+              </Link>
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu className="w-6 h-6" />
               </Button>
             </div>

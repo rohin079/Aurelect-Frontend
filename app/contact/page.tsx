@@ -680,14 +680,14 @@ const FAQSection = () => (
                   "Our fee structure is transparent and based on the services you choose. We typically charge a percentage of assets under management for investment services, while financial planning services may be offered on a flat-fee or retainer basis. We'll provide a detailed fee schedule during your initial consultation.",
               },
               {
-                question: "What's your investment philosophy?",
+                question: "How do you handle software integration and data security?",
                 answer:
-                  "Our investment philosophy centers on long-term wealth creation through diversified, risk-managed portfolios. We emphasize transparent, evidence-based investing strategies tailored to your specific goals, time horizon, and risk tolerance. Regular portfolio rebalancing and tax-efficient management are key components of our approach.",
+                  "We utilize industry-leading software solutions including QuickBooks, Xero, Sage, UltraTax, and many others to ensure seamless operations. All data is protected with enterprise-grade security measures, regular backups, and strict access controls. Our team is certified in multiple platforms and follows best practices for data handling and compliance.",
               },
               {
-                question: "How do you ensure my financial security?",
+                question: "What makes your outsourcing services reliable?",
                 answer:
-                  "We maintain the highest standards of security and compliance. Your assets are held with reputable custodians, protected by advanced encryption, and backed by comprehensive insurance. We're regulated by relevant financial authorities and undergo regular audits to ensure compliance with industry standards.",
+                  "Our reliability stems from our proven track record, 24/7 client support, and comprehensive IT compliance measures. We maintain a 99% client satisfaction rate and respond to queries within 48 hours. Our team is expertly trained in various accounting software platforms, and we ensure data security with 100% IT compliance standards. We provide scalable solutions that grow with your business while delivering 30-50% cost savings.",
               },
               {
                 question: "What makes your firm different?",

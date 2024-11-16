@@ -93,10 +93,16 @@ const HeroSection = () => (
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="px-8 py-4 bg-sky-600 text-white rounded-xl font-semibold hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl">
+            <button
+              className="px-8 py-4 bg-sky-600 text-white rounded-xl font-semibold hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl"
+              onClick={() => window.location.href = '/contact'}
+            >
               Schedule Consultation
             </button>
-            <button className="px-8 py-4 bg-white text-sky-600 rounded-xl font-semibold border-2 border-sky-100 hover:bg-sky-50 transition-colors">
+            <button
+              className="px-8 py-4 bg-white text-sky-600 rounded-xl font-semibold border-2 border-sky-100 hover:bg-sky-50 transition-colors"
+              onClick={() => window.location.href = '/industries'}
+            >
               Learn More
             </button>
           </div>
@@ -105,8 +111,8 @@ const HeroSection = () => (
           <div className="mt-12 grid grid-cols-3 gap-6 items-center text-center lg:text-left">
             {[
               { value: "25+", label: "Years Experience" },
-              { value: "$5B+", label: "Assets Managed" },
-              { value: "10k+", label: "Happy Clients" },
+              { value: "24/7", label: "Support" },
+              { value: "99%", label: "Happy Clients" },
             ].map((stat, index) => (
               <div key={index} className="space-y-1">
                 <div className="text-2xl font-bold text-slate-900">
