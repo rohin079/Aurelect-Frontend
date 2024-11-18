@@ -670,34 +670,39 @@ const FAQSection = () => (
           <Accordion type="single" collapsible className="w-full space-y-4">
             {[
               {
-                question: "What financial services do you provide?",
+                question:
+                  "What is finance outsourcing, and how does it benefit my business?",
                 answer:
-                  "We offer a comprehensive suite of financial services including investment management, retirement planning, tax optimization strategies, estate planning, and personalized wealth management solutions. Our team works closely with you to develop strategies aligned with your financial goals and risk tolerance.",
+                  "Finance outsourcing involves hiring a specialized third-party provider to manage your financial and accounting processes. It benefits your business by reducing costs, enhancing efficiency, ensuring compliance, and allowing you to focus on core operations.",
               },
               {
-                question: "How do your fees work?",
+                question: "What services do you offer?",
                 answer:
-                  "Our fee structure is transparent and based on the services you choose. We typically charge a percentage of assets under management for investment services, while financial planning services may be offered on a flat-fee or retainer basis. We'll provide a detailed fee schedule during your initial consultation.",
+                  "We offer a comprehensive range of finance outsourcing services, including bookkeeping, payroll management, tax preparation, financial reporting, budgeting and forecasting, accounts payable and receivable, and strategic financial planning.",
               },
               {
-                question: "How do you handle software integration and data security?",
+                question:
+                  "How do you ensure data security and confidentiality?",
                 answer:
-                  "We utilize industry-leading software solutions including QuickBooks, Xero, Sage, UltraTax, and many others to ensure seamless operations. All data is protected with enterprise-grade security measures, regular backups, and strict access controls. Our team is certified in multiple platforms and follows best practices for data handling and compliance.",
+                  "We prioritize data security through robust encryption, secure data centers, and strict confidentiality agreements. We comply with industry best practices and regulatory standards to keep your financial information safe.",
               },
               {
-                question: "What makes your outsourcing services reliable?",
+                question:
+                  "Will outsourcing my finance functions affect the quality of my financial reports?",
                 answer:
-                  "Our reliability stems from our proven track record, 24/7 client support, and comprehensive IT compliance measures. We maintain a 99% client satisfaction rate and respond to queries within 48 hours. Our team is expertly trained in various accounting software platforms, and we ensure data security with 100% IT compliance standards. We provide scalable solutions that grow with your business while delivering 30-50% cost savings.",
+                  "No, outsourcing often enhances the quality of your financial reports. Our team of experts ensures accuracy, consistency, and compliance with the latest accounting standards, providing you with reliable and actionable financial insights.",
               },
               {
-                question: "What makes your firm different?",
+                question:
+                  "How do you customize your services to meet my specific business needs?",
                 answer:
-                  "Our combination of personalized service, innovative technology, and deep expertise sets us apart. We maintain a low client-to-advisor ratio to ensure personalized attention, use advanced financial planning tools, and provide ongoing education and support to help you make informed financial decisions.",
+                  "We start by understanding your business model, goals, and challenges. Based on this, we tailor our services to match your requirements, offering flexible solutions that scale as your business grows.",
               },
               {
-                question: "How do I get started?",
+                question:
+                  "Can I maintain control over my financial processes if I outsource?",
                 answer:
-                  "Getting started is simple. Schedule a complimentary consultation through our website or call us directly. During this initial meeting, we'll discuss your financial goals, assess your current situation, and explain how our services can help you achieve your objectives. We'll then develop a customized plan tailored to your needs.",
+                  "Absolutely. We work as an extension of your team, providing regular updates and giving you full visibility into all financial activities. You can choose the level of involvement and oversight you prefer.",
               },
             ].map((faq, index) => (
               <AccordionItem
