@@ -162,8 +162,13 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-r from-sky-600 to-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                AA
+              <img
+                src="/logos/file.png"
+                alt="Aurelect Advisors Logo"
+                className="w-10 h-10"
+                />
               </div>
+               
               <div>
                 <h1 className="text-xl font-bold text-slate-900">
                   Aurelect Advisors

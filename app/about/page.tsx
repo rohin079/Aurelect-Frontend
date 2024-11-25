@@ -79,29 +79,30 @@ const HeroSection = () => (
           className="text-center lg:text-left lg:max-w-2xl"
         >
           <span className="inline-block text-sky-600 font-semibold mb-4">
-            Welcome to Financial Group
+            About Our Journey
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-            Secure Your{" "}
+            Shaping the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600">
-              Financial Future
+              Future of Financial Excellence
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">
-            Expert financial guidance and wealth management solutions tailored
-            to help you achieve your financial goals.
+            A legacy of innovation, expertise, and unwavering commitment to
+            transforming financial services through cutting-edge solutions and
+            client-centric approaches.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button
               className="px-8 py-4 bg-sky-600 text-white rounded-xl font-semibold hover:bg-sky-700 transition-colors shadow-lg hover:shadow-xl"
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => (window.location.href = "/contact")}
             >
               Schedule Consultation
             </button>
             <button
               className="px-8 py-4 bg-white text-sky-600 rounded-xl font-semibold border-2 border-sky-100 hover:bg-sky-50 transition-colors"
-              onClick={() => window.location.href = '/industries'}
+              onClick={() => (window.location.href = "/industries")}
             >
               Learn More
             </button>
