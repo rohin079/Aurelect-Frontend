@@ -246,28 +246,10 @@ const serviceOptions: ServiceOption[] = [
       "HR advisory and outsourcing services, including recruitment, payroll management, and employee benefits administration.",
   },
   {
-    value: "it-networking",
-    label: "IT and Networking Services",
-    description:
-      "IT consulting, networking solutions, and system integration services, including maintenance of hardware and software infrastructure.",
-  },
-  {
-    value: "software-development",
-    label: "Software Development",
-    description:
-      "Development, design, and maintenance of software applications, solutions, and platforms for various business needs.",
-  },
-  {
     value: "ecommerce",
     label: "E-commerce and Web-Enabled Business",
     description:
       "E-commerce solutions, online marketplaces, and web-enabled business models.",
-  },
-  {
-    value: "server-maintenance",
-    label: "Server Maintenance and Support",
-    description:
-      "Server hosting, maintenance, and support services, ensuring robust IT infrastructure for businesses.",
   },
   {
     value: "legal-services",
@@ -280,6 +262,12 @@ const serviceOptions: ServiceOption[] = [
     label: "Financial Consulting and Advisory",
     description:
       "Management consulting, business transformation, strategic financial advisory, and risk management services.",
+  },
+  {
+    value: "others",
+    label: "Others",
+    description:
+      "Other services not listed here. Please specify your requirements in the message.",
   },
 ];
 
