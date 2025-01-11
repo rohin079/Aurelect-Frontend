@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, Globe, ArrowRight } from "lucide-react";
+import { Shield, Globe, ArrowRight, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => (
@@ -103,9 +103,30 @@ const Footer = () => (
       {/* Bottom Footer */}
       <div className="py-8 border-t border-slate-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-400">
-            © {new Date().getFullYear()} Aurelect Advisors. All rights reserved.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-sm text-slate-400">
+              © {new Date().getFullYear()} Aurelect Advisors. All rights reserved.
+            </p>
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.linkedin.com/company/aurelectadvisors/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-sky-400 transition-colors duration-300"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/aurelectadvisor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-sky-400 transition-colors duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
           <div className="flex flex-wrap gap-6">
             {[
               { label: "Privacy Policy", href: "/privacy" },
