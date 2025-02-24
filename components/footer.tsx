@@ -129,7 +129,7 @@ const Footer = () => (
           </div>
           <div className="flex flex-wrap gap-6">
             {[
-              { label: "Privacy Policy", href: "/privacy" },
+              { label: "Privacy Policy", href: "/privacypolicy" },
               { label: "Terms of Service", href: "/terms" },
               { label: "Cookie Policy", href: "/cookies" },
               { label: "Accessibility", href: "/accessibility" },

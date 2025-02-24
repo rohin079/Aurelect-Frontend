@@ -17,6 +17,10 @@ import {
   Target,
   ChartBar,
   ShieldCheck,
+  User,
+  BookOpen,
+  Briefcase,
+  Award as AwardIcon,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 
@@ -339,6 +343,175 @@ const CoreValuesSection = () => (
                     <span>Growth Advisory</span>
                   </li>
                 </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
+
+const FounderSection = () => (
+  <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white">
+    {/* Background Elements */}
+    <div className="absolute inset-0">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgb(148, 163, 184) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      {/* Light decorative shapes */}
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-80 h-80 bg-sky-100 rounded-full opacity-20 blur-3xl" />
+      <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 blur-3xl" />
+    </div>
+
+    <div className="relative max-w-7xl mx-auto px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="text-center mb-16"
+      >
+        <span className="text-sky-600 font-semibold mb-2 block">
+          Leadership
+        </span>
+        <h2 className="text-4xl font-bold mb-4 text-slate-900">
+          Meet Our Founder
+        </h2>
+        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          The visionary mind behind Aurelect Advisors
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+        {/* Founder Image Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="absolute -inset-4">
+            <div className="w-full h-full rotate-2 bg-gradient-to-r from-sky-400 to-blue-500 opacity-30 blur-lg rounded-2xl"></div>
+          </div>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/5]">
+            <img
+              src="/images/rahulmehrotra.jpeg" // Make sure to add this image to your public/images folder
+              alt="Rahul Mehrotra - Founder & CEO"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 className="text-2xl font-bold">Rahul Mehrotra</h3>
+              <p className="text-sky-300 font-medium">Founder & CEO</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Founder Bio Column */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:col-span-2"
+        >
+          <Card className="bg-white h-full hover:shadow-xl transition-shadow duration-300 relative">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-slate-900">
+                Rahul Mehrotra — Founder & CEO, Aurelect Advisors
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-slate-600">
+                A Fellow Chartered Accountant (FCA) with an M.Com, MBA, and a Fellow in Insurance degree, Rahul Mehrotra brings exceptional credentials to Aurelect Advisors. He is also an IFRS Scholar and holds certifications in Digital Transformation and Lean Six Sigma.
+              </p>
+              
+              <p className="text-slate-600">
+                With over 25 years of experience in finance operations & transformation, outsourcing, and shared services, Rahul has built and scaled finance functions from scratch, led regulatory compliance, ERP implementations, process automation, and financial standardization, and optimized operations across multiple industries.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="h-6 w-6 text-sky-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Industry Expertise</h4>
+                      <p className="text-slate-600">
+                        Insurance, automobiles, non-profits, hospitality, property management, solicitors, healthcare, and manufacturing
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="h-6 w-6 text-sky-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Qualifications</h4>
+                      <p className="text-slate-600">
+                        Fellow Chartered Accountant, M.Com, MBA, Fellow in Insurance, IFRS Scholar, Digital Transformation and Lean Six Sigma certified
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <User className="h-6 w-6 text-sky-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Leadership</h4>
+                      <p className="text-slate-600">
+                        Led large teams managing US-based clients, including CPA firms, SMEs, franchise businesses, and enterprises
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <AwardIcon className="h-6 w-6 text-sky-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-900 mb-2">Services</h4>
+                      <p className="text-slate-600">
+                        Virtual CFO, strategic advisory, bookkeeping, tax filing, financial reporting, automation, fintech solutions, ERP rollouts, RPA, and treasury management
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-slate-100">
+                <p className="text-slate-600">
+                  Driven by a passion for helping businesses unlock financial efficiency and long-term growth, Rahul founded Aurelect Advisors with the vision of transforming finance functions into strategic enablers, empowering organizations with expert insights, process optimization, and digital finance solutions.
+                </p>
+              </div>
+
+              <div className="pt-6">
+                <a
+                  href="https://www.linkedin.com/in/rahulmehrotra75/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  Connect on LinkedIn
+                </a>
               </div>
             </CardContent>
           </Card>
@@ -731,6 +904,7 @@ export default function About() {
       <main className="flex-grow">
         <HeroSection />
         <CoreValuesSection />
+        <FounderSection></FounderSection>
         <ApproachSection />
         <AchievementsSection />
         <JourneySection />
