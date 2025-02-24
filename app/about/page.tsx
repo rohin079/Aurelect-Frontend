@@ -352,7 +352,6 @@ const CoreValuesSection = () => (
   </section>
 );
 
-
 const FounderSection = () => (
   <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white">
     {/* Background Elements */}
@@ -409,7 +408,7 @@ const FounderSection = () => (
               alt="Rahul Mehrotra - Founder & CEO"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent"></div> */}
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 className="text-2xl font-bold">Rahul Mehrotra</h3>
               <p className="text-sky-300 font-medium">Founder & CEO</p>
@@ -433,11 +432,19 @@ const FounderSection = () => (
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-slate-600">
-                A Fellow Chartered Accountant (FCA) with an M.Com, MBA, and a Fellow in Insurance degree, Rahul Mehrotra brings exceptional credentials to Aurelect Advisors. He is also an IFRS Scholar and holds certifications in Digital Transformation and Lean Six Sigma.
+                As the Founder & CEO of Aurelect Advisors, Rahul Mehrotra brings
+                over 25 years of experience in outsourcing and transformation.
+                He specializes in building startups, establishing SSC & GCCs,
+                and leading finance transformations for global clients,
+                including SMEs, CPA firms, and large enterprises. His expertise
+                lies in delivering innovative financial solutions, driving
+                automation, and creating scalable operations that ensure
+                financial excellence.
               </p>
-              
+
               <p className="text-slate-600">
-                With over 25 years of experience in finance operations & transformation, outsourcing, and shared services, Rahul has built and scaled finance functions from scratch, led regulatory compliance, ERP implementations, process automation, and financial standardization, and optimized operations across multiple industries.
+                Additionally, he provides CFO-level reviews to ensure accurate,
+                compliant, and strategic insights for optimized business growth.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
@@ -447,9 +454,13 @@ const FounderSection = () => (
                       <Briefcase className="h-6 w-6 text-sky-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2">Industry Expertise</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">
+                        Industry Expertise
+                      </h4>
                       <p className="text-slate-600">
-                        Insurance, automobiles, non-profits, hospitality, property management, solicitors, healthcare, and manufacturing
+                        Insurance, automobiles, non-profits, hospitality,
+                        property management, solicitors, healthcare, and
+                        manufacturing
                       </p>
                     </div>
                   </div>
@@ -459,9 +470,13 @@ const FounderSection = () => (
                       <BookOpen className="h-6 w-6 text-sky-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2">Qualifications</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">
+                        Qualifications
+                      </h4>
                       <p className="text-slate-600">
-                        Fellow Chartered Accountant, M.Com, MBA, Fellow in Insurance, IFRS Scholar, Digital Transformation and Lean Six Sigma certified
+                        Fellow Chartered Accountant, M.Com, MBA, Fellow in
+                        Insurance, IFRS Scholar, Digital Transformation and Lean
+                        Six Sigma certified
                       </p>
                     </div>
                   </div>
@@ -473,9 +488,12 @@ const FounderSection = () => (
                       <User className="h-6 w-6 text-sky-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2">Leadership</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">
+                        Leadership
+                      </h4>
                       <p className="text-slate-600">
-                        Led large teams managing US-based clients, including CPA firms, SMEs, franchise businesses, and enterprises
+                        Led large teams managing US-based clients, including CPA
+                        firms, SMEs, franchise businesses, and enterprises
                       </p>
                     </div>
                   </div>
@@ -485,9 +503,13 @@ const FounderSection = () => (
                       <AwardIcon className="h-6 w-6 text-sky-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2">Services</h4>
+                      <h4 className="font-semibold text-slate-900 mb-2">
+                        Services
+                      </h4>
                       <p className="text-slate-600">
-                        Virtual CFO, strategic advisory, bookkeeping, tax filing, financial reporting, automation, fintech solutions, ERP rollouts, RPA, and treasury management
+                        Virtual CFO, strategic advisory, bookkeeping, tax
+                        filing, financial reporting, automation, fintech
+                        solutions, ERP rollouts, RPA, and treasury management
                       </p>
                     </div>
                   </div>
@@ -496,7 +518,11 @@ const FounderSection = () => (
 
               <div className="pt-6 border-t border-slate-100">
                 <p className="text-slate-600">
-                  Driven by a passion for helping businesses unlock financial efficiency and long-term growth, Rahul founded Aurelect Advisors with the vision of transforming finance functions into strategic enablers, empowering organizations with expert insights, process optimization, and digital finance solutions.
+                  Driven by a passion for helping businesses unlock financial
+                  efficiency and long-term growth, Rahul founded Aurelect
+                  Advisors with the vision of transforming finance functions
+                  into strategic enablers, empowering organizations with expert
+                  insights, process optimization, and digital finance solutions.
                 </p>
               </div>
 
@@ -507,7 +533,11 @@ const FounderSection = () => (
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors"
                 >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                   Connect on LinkedIn
